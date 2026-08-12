@@ -1,0 +1,1042 @@
+{
+  "metadata": {
+    "description": "Administration console for Travelas partner transport companies.",
+    "login": "Sign in",
+    "register": "Create my company",
+    "dashboard": "Overview",
+    "onboarding": "Create my company",
+    "seats": "Branches",
+    "staff": "Staff",
+    "forgotPassword": "Forgotten password",
+    "company": "My company",
+    "revenue": "Revenue",
+    "statistics": "Statistics",
+    "journeys": "Journeys",
+    "tickets": "Tickets",
+    "incidents": "Incidents",
+    "opinions": "Customer reviews",
+    "settings": "Settings"
+  },
+  "common": {
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close",
+    "save": "Save",
+    "retry": "Try again",
+    "reset": "Reset",
+    "search": "Search",
+    "actions": "Actions",
+    "loading": "Loading…",
+    "working": "Working…",
+    "saving": "Saving…",
+    "none": "None",
+    "unnamed": "Unnamed",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "yourCompany": "your company",
+    "myCompany": "My company",
+    "cropper": {
+      "instructions": "Drag the image to frame it, then adjust the zoom.",
+      "frameLabel": "Crop area: arrow keys to move, + and − to zoom",
+      "zoom": "Zoom",
+      "zoomIn": "Zoom in",
+      "zoomOut": "Zoom out",
+      "recenter": "Recentre",
+      "apply": "Apply",
+      "processing": "Processing…",
+      "loading": "Loading image…",
+      "failed": "This image could not be opened. Try another one."
+    },
+    "unknown": "Unknown"
+  },
+  "theme": {
+    "label": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "locale": {
+    "label": "Language"
+  },
+  "brand": {
+    "travelasLogo": "Travelas logo",
+    "novatechLogo": "Novatech logo",
+    "dashboardHome": "Travelas — dashboard",
+    "copyright": "© {year} Novatech",
+    "poweredBy": "Powered by Travelas"
+  },
+  "nav": {
+    "main": "Main navigation",
+    "company": "Company",
+    "soon": "soon",
+    "collapse": "Collapse sidebar",
+    "expand": "Expand sidebar",
+    "sections": {
+      "steering": "Steering",
+      "organization": "Organisation",
+      "operations": "Operations",
+      "account": "Account"
+    },
+    "items": {
+      "dashboard": "Overview",
+      "statistics": "Statistics",
+      "revenue": "Revenue",
+      "company": "My company",
+      "seats": "Branches",
+      "staff": "Staff",
+      "journeys": "Journeys",
+      "tickets": "Tickets",
+      "incidents": "Incidents",
+      "opinions": "Customer reviews",
+      "settings": "Settings"
+    }
+  },
+  "roles": {
+    "super_admin": "Super administrator",
+    "company_admin": "Company owner",
+    "agency_admin": "Branch manager",
+    "company_agent": "Agent",
+    "company_driver": "Driver",
+    "user": "Customer"
+  },
+  "topbar": {
+    "logout": "Sign out",
+    "logoutConfirmTitle": "Sign out?",
+    "logoutConfirmDescription": "Your session will be closed on this device. You will have to sign in again to come back to the dashboard.",
+    "logoutFailed": "Sign-out failed. Please try again."
+  },
+  "auth": {
+    "appSubtitle": "Reserved for Travelas partner transport companies.",
+    "loginTitle": "Sign in",
+    "loginSubtitle": "Reserved for company administrators.",
+    "loginField": "Email or username",
+    "passwordField": "Password",
+    "newPasswordField": "New password",
+    "newPasswordHint": "At least 12 characters, with an uppercase letter, a digit and a special character.",
+    "submit": "Sign in",
+    "submitting": "Signing in…",
+    "noAccount": "No account yet?",
+    "createCompany": "Create my company",
+    "resumeVerification": "Finish verifying my email",
+    "steps": {
+      "label": "Sign-up steps",
+      "position": "Step {current} of {total}",
+      "account": "Account",
+      "verification": "Verification",
+      "company": "Company"
+    },
+    "register": {
+      "title": "Create your account",
+      "subtitle": "The administrator account of your transport company.",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Work email",
+      "emailHint": "This is where your verification code will be sent.",
+      "phone": "Phone",
+      "phoneHint": "With country code, e.g. +2250700000000",
+      "userName": "Sign-in username",
+      "userNameHint": "Letters, digits, dot, hyphen and underscore.",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "passwordRules": {
+        "length": "12 characters minimum",
+        "lowercase": "One lowercase letter",
+        "uppercase": "One uppercase letter",
+        "digit": "One digit",
+        "special": "One special character"
+      },
+      "submit": "Create my account",
+      "submitting": "Creating account…",
+      "legal": "This account gives access to your company's financial and personal data. Keep it personal.",
+      "haveAccount": "Already have an account?",
+      "signIn": "Sign in",
+      "errors": {
+        "failed": "Account creation failed. Check your details and try again.",
+        "rateLimited": "Too many attempts. Try again in a few minutes.",
+        "invalidRequest": "Invalid request.",
+        "duplicateEmail": "An account already exists with this email.",
+        "duplicatePhone": "An account already exists with this phone number.",
+        "duplicateUsername": "This username is already taken."
+      }
+    },
+    "verify": {
+      "title": "Verify your email",
+      "subtitle": "A six-digit code has just been sent to:",
+      "codeField": "Verification code",
+      "codeHint": "The code expires after 5 minutes.",
+      "submit": "Verify my email",
+      "submitting": "Verifying…",
+      "signingIn": "Opening your workspace…",
+      "spam": "Nothing received? Check your spam folder.",
+      "resend": "Resend the code",
+      "resending": "Sending…",
+      "resendIn": "Resend the code in {seconds}s",
+      "resent": "A new code has just been sent to you.",
+      "changeEmail": "Correct the email address",
+      "newEmailField": "New email address",
+      "cancelEmail": "Cancel",
+      "confirmEmail": "Send the code",
+      "verifiedNotice": "Your email is verified. Sign in to continue.",
+      "errors": {
+        "invalid": "Wrong code. Check the latest email you received.",
+        "expired": "This code has expired. Request a new one.",
+        "noPending": "Your sign-up is no longer in progress. Please start again.",
+        "rateLimited": "Too many attempts. Try again in a few minutes.",
+        "resendFailed": "Sending failed. Try again in a moment.",
+        "changeEmailFailed": "This address could not be saved. Try another one."
+      }
+    },
+    "resetSteps": {
+      "label": "Password reset steps",
+      "position": "Step {current} of {total}",
+      "email": "Address",
+      "code": "Code",
+      "password": "Password"
+    },
+    "forgotPassword": {
+      "link": "Forgot your password?",
+      "title": "Forgotten password",
+      "subtitle": "Enter your account address: a verification code will be sent to it.",
+      "emailField": "Account email",
+      "emailHint": "The address you signed up with.",
+      "send": "Send me a code",
+      "sending": "Sending…",
+      "backToLogin": "Back to sign-in",
+      "codeTitle": "Enter the code",
+      "codeSubtitle": "If an account exists for this address, a six-digit code has just been sent to:",
+      "codeField": "Verification code",
+      "codeHint": "The code expires after 5 minutes.",
+      "verify": "Validate the code",
+      "verifying": "Verifying…",
+      "spam": "Nothing received? Check your spam folder.",
+      "resend": "Resend the code",
+      "resending": "Sending…",
+      "resendIn": "Resend the code in {seconds}s",
+      "resent": "A new code has just been sent.",
+      "changeEmail": "Use another address",
+      "resetTitle": "New password",
+      "resetSubtitle": "Choose a password you do not use anywhere else.",
+      "newPassword": "New password",
+      "confirmPassword": "Confirm password",
+      "reset": "Change my password",
+      "resetting": "Changing…",
+      "done": "Password changed.",
+      "resetNotice": "Your password has been changed. Sign in with the new one.",
+      "errors": {
+        "failed": "The operation failed. Try again in a moment.",
+        "invalidCode": "Wrong code. Check the latest email you received.",
+        "expiredCode": "This code has expired. Request a new one.",
+        "noPending": "Your request is no longer in progress. Please start again.",
+        "expiredSession": "The time limit has passed. Request a new code.",
+        "samePassword": "Choose a password different from the previous one.",
+        "weakPassword": "This password does not meet the security rules.",
+        "rateLimited": "Too many attempts. Try again in a few minutes."
+      }
+    },
+    "status": {
+      "login_successfully": "Signed in successfully.",
+      "wrong_password": "Invalid credentials.",
+      "account_doesnt_exist": "Invalid credentials.",
+      "account_not_verified": "Your account is not verified yet. Check your inbox.",
+      "need_password_update": "You must set a new password before continuing.",
+      "account_blocked": "Your account is blocked for suspicious activity. Contact support.",
+      "account_blocked_by_company": "Your account has been deactivated by your company."
+    },
+    "errors": {
+      "failed": "Sign-in failed.",
+      "rateLimited": "Too many attempts. Try again shortly.",
+      "invalidRequest": "Invalid request.",
+      "wrongDashboard": "This dashboard is reserved for company administrators."
+    }
+  },
+  "dashboard": {
+    "greeting": "Hello {firstName}",
+    "steering": "Steering {company}.",
+    "noCompany": "Create your company to start managing your branches.",
+    "noCompanyHelp": "Your account is active, but no company is linked to it. Branches, staff and statistics unlock as soon as this step is done.",
+    "noCompanyCta": "Register my company",
+    "shortcuts": {
+      "title": "Quick access",
+      "seats": "Manage my branches",
+      "staff": "Manage my staff",
+      "revenue": "Review revenue",
+      "incidents": "Handle incidents",
+      "staffCount": "Registered staff: {count}"
+    }
+  },
+  "onboarding": {
+    "welcome": "Welcome {firstName}",
+    "subtitle": "Last step: register the company you run. It becomes the frame for your branches, your staff and your revenue.",
+    "form": {
+      "name": "Company name",
+      "nameHint": "The name your travellers know you by.",
+      "logo": "Logo",
+      "logoHint": "Shown in the traveller app.",
+      "banner": "Banner",
+      "bannerHint": "Cover image of your company profile.",
+      "imagePick": "Choose a file",
+      "imageReplace": "Replace",
+      "imageRemove": "Remove",
+      "imageRecrop": "Crop",
+      "imageDropHint": "Drag an image here, or click to pick one.",
+      "imageZone": "Drop or choose an image",
+      "imageRatioSquare": "Square 1:1 format.",
+      "imageRatioWide": "Banner 2:1 format.",
+      "cropLogo": "Crop the logo",
+      "cropBanner": "Crop the banner",
+      "imageConstraints": "Optional — PNG, JPG or WebP, 2 MB maximum. Images are cropped before upload.",
+      "submit": "Create my company",
+      "submitting": "Creating…"
+    },
+    "next": {
+      "title": "What comes next",
+      "seats": {
+        "title": "Register your branches",
+        "body": "Each branch belongs to a station and gets its own staff."
+      },
+      "staff": {
+        "title": "Invite your staff",
+        "body": "Branch managers, agents and drivers receive their access by email."
+      },
+      "steering": {
+        "title": "Steer your business",
+        "body": "Revenue, tickets sold, incidents and customer reviews."
+      }
+    },
+    "actions": {
+      "created": "Company created. Welcome to your Travelas workspace.",
+      "failed": "Company creation failed. Try again in a moment.",
+      "invalidFields": "Some fields are invalid.",
+      "duplicateName": "A company already uses this name.",
+      "imageType": "Unsupported format. Use a PNG, JPG or WebP file.",
+      "imageTooLarge": "Image too large. 2 MB maximum."
+    }
+  },
+  "staff": {
+    "title": "Staff",
+    "subtitle": "Branch managers, agents and drivers of {company}.",
+    "tableCaption": "Company staff",
+    "itemLabel": "staff members",
+    "columns": {
+      "member": "Member",
+      "role": "Role",
+      "seat": "Branch",
+      "status": "Status"
+    },
+    "you": "(you)",
+    "unassigned": "Unassigned",
+    "statusValues": {
+      "blocked": "Blocked",
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "empty": {
+      "title": "No staff members",
+      "description": "Add your branch managers, agents and drivers so they can access the Travelas apps.",
+      "filteredTitle": "No matching staff member",
+      "filteredDescription": "Change or reset the filters to widen the search."
+    },
+    "filters": {
+      "searchLabel": "Search for a staff member",
+      "searchPlaceholder": "Name, email, phone…",
+      "role": "Role",
+      "allRoles": "All roles",
+      "status": "Status",
+      "allStatuses": "All",
+      "active": "Active",
+      "blocked": "Blocked"
+    },
+    "create": "Add a staff member",
+    "form": {
+      "createTitle": "Add a staff member",
+      "editTitle": "Edit staff member",
+      "createDescription": "A temporary password will be emailed to the staff member.",
+      "editDescription": "Changes take effect immediately.",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "phone": "Phone",
+      "phoneHint": "With country code, e.g. +2250700000000",
+      "role": "Role",
+      "seat": "Assigned branch",
+      "seatHintEmpty": "No branch registered yet.",
+      "seatHint": "The assignment can be changed later.",
+      "mainSeat": "(main)",
+      "cni": "ID document number",
+      "cniHint": "Optional",
+      "lang": "Language",
+      "submitCreate": "Create account",
+      "submitEdit": "Save"
+    },
+    "rowActions": {
+      "edit": "Edit {name}",
+      "block": "Block {name}",
+      "unblock": "Unblock {name}",
+      "delete": "Delete {name}"
+    },
+    "confirmBlock": {
+      "title": "Block this staff member?",
+      "description": "{name} will no longer be able to sign in. Tickets already issued remain valid.",
+      "action": "Block"
+    },
+    "confirmUnblock": {
+      "title": "Unblock this staff member?",
+      "description": "{name} will be able to sign in to the Travelas apps again.",
+      "action": "Unblock"
+    },
+    "confirmDelete": {
+      "title": "Delete this staff member?",
+      "description": "{name}'s account will be removed from your company. Their activity history is kept.",
+      "action": "Delete"
+    },
+    "actions": {
+      "created": "Staff member created. Their credentials have been emailed to them.",
+      "updated": "Staff member updated.",
+      "blocked": "Staff member blocked.",
+      "unblocked": "Staff member unblocked.",
+      "deleted": "Staff member deleted.",
+      "invalidFields": "Some fields are invalid.",
+      "invalidRequest": "Invalid request.",
+      "forbidden": "This action is not allowed on this staff member.",
+      "cannotBlockSelf": "You cannot block your own account.",
+      "cannotDeleteSelf": "You cannot delete your own account.",
+      "duplicateEmail": "This email is already in use.",
+      "duplicatePhone": "This phone number is already in use.",
+      "duplicateUsername": "This username is already taken. Change the first or last name."
+    }
+  },
+  "languages": {
+    "fr": "French",
+    "en": "English"
+  },
+  "pagination": {
+    "label": "Pagination",
+    "noResults": "No results",
+    "rangeOf": "{from}–{to} of {total} {item}",
+    "range": "{from}–{to} {item}",
+    "items": "items",
+    "perPage": "Per page",
+    "previous": "Previous page",
+    "next": "Next page",
+    "page": "Page {page}",
+    "pageOf": "Page {page} of {pageCount}"
+  },
+  "skeleton": {
+    "loadingData": "Loading data",
+    "loadingStats": "Loading indicators"
+  },
+  "errors": {
+    "boundaryTitle": "This section could not be loaded",
+    "boundaryDescription": "The operation did not complete. Try again; if the problem persists, pass the reference below to support.",
+    "publicTitle": "Page unavailable",
+    "publicDescription": "This page cannot be displayed right now. Try again in a moment.",
+    "globalTitle": "Something went wrong",
+    "globalDescription": "The operation could not complete. If the problem persists, contact support with the reference below.",
+    "rootTitle": "Service unavailable",
+    "rootDescription": "The application failed to start. Reload the page; if the problem persists, contact support with the reference below.",
+    "reload": "Reload",
+    "notFoundTitle": "Page not found",
+    "notFoundDescription": "This page does not exist or is not accessible with your account.",
+    "backToDashboard": "Back to dashboard",
+    "operationFailed": "The operation failed. Try again in a moment.",
+    "unavailable": "The service is temporarily unavailable. Try again in a moment.",
+    "unexpected": "An unexpected error occurred.",
+    "serverError": "Server error",
+    "forbiddenOrigin": "Request origin not allowed."
+  },
+  "validation": {
+    "firstNameRequired": "First name required",
+    "lastNameRequired": "Last name required",
+    "emailInvalid": "Invalid email",
+    "companyNameRequired": "Company name required",
+    "confirmPasswordRequired": "Confirm the password",
+    "codeInvalid": "A 6-digit code is expected",
+    "max20": "20 characters maximum",
+    "max30": "30 characters maximum",
+    "max50": "50 characters maximum",
+    "max15": "15 characters maximum",
+    "max100": "100 characters maximum",
+    "seatNameRequired": "Branch name required",
+    "agencyRequired": "Choose a station",
+    "latitudeInvalid": "Invalid latitude, between -90 and 90",
+    "longitudeInvalid": "Invalid longitude, between -180 and 180",
+    "coordinatesIncomplete": "Fill in both coordinates or neither",
+    "phoneInternational": "International format expected, e.g. +2250700000000",
+    "roleRequired": "Choose a role",
+    "loginRequired": "Enter your email or username",
+    "loginTooLong": "Username too long",
+    "passwordRequired": "Enter your password",
+    "passwordTooLong": "Password too long",
+    "passwordMin12": "12 characters minimum",
+    "passwordMax128": "128 characters maximum",
+    "passwordLowercase": "At least one lowercase letter",
+    "passwordUppercase": "At least one uppercase letter",
+    "passwordDigit": "At least one digit",
+    "passwordSpecial": "At least one special character",
+    "passwordWeak": "Password too weak",
+    "usernameMin3": "3 characters minimum",
+    "usernameCharset": "Letters, digits, dot, hyphen and underscore only",
+    "phoneInvalid": "Invalid phone number",
+    "phoneDigits": "Digits only, country code optional",
+    "passwordMismatch": "Passwords do not match",
+    "max500": "500 characters maximum",
+    "passwordSameAsCurrent": "The new password must differ from the current one"
+  },
+  "seats": {
+    "unnamed": "Unnamed branch",
+    "unnamedAgency": "Unnamed station",
+    "unknownCity": "City not specified",
+    "title": "Branches",
+    "subtitle": "The branches of {company} and the station each belongs to.",
+    "tableCaption": "Company branches",
+    "itemLabel": "branches",
+    "create": "Add a branch",
+    "main": "Main",
+    "noAgency": "No station",
+    "noStreet": "No address",
+    "truncated": "Only the first {limit} branches are shown. Narrow the search, or contact support if your company has more.",
+    "columns": {
+      "seat": "Branch",
+      "agency": "Station",
+      "services": "Services",
+      "status": "Status"
+    },
+    "services": {
+      "bedroom": "Rooms",
+      "seatNumberBook": "Seat selection",
+      "noSeatNumberBook": "No seat selection"
+    },
+    "statusValues": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "empty": {
+      "title": "No branches",
+      "description": "Register your branches to assign staff, create journeys and track daily revenue.",
+      "filteredTitle": "No matching branch",
+      "filteredDescription": "Change or reset the filters to widen the search."
+    },
+    "filters": {
+      "searchLabel": "Search for a branch",
+      "searchPlaceholder": "Name, address, station, city…",
+      "status": "Status",
+      "allStatuses": "All",
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "form": {
+      "createTitle": "Add a branch",
+      "editTitle": "Edit branch",
+      "createDescription": "The branch will immediately be available for staff assignment.",
+      "editDescription": "Changes take effect immediately.",
+      "name": "Branch name",
+      "agency": "Station",
+      "agencyPlaceholder": "Choose a station",
+      "agencyHint": "The station determines the branch's city.",
+      "agencyHintEmpty": "No station has been registered yet. Contact Travelas support.",
+      "street": "Address",
+      "streetHint": "Optional — street, district or landmark.",
+      "booking": "Seat selection at booking",
+      "bookingHint": "“Company setting” lets the branch follow the global configuration.",
+      "bookingInherit": "Company setting",
+      "bookingYes": "Allowed",
+      "bookingNo": "Not allowed",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "coordinatesHint": "Optional — both coordinates go together.",
+      "isMain": "Main branch",
+      "isMainHint": "The company headquarters. Only one branch should hold this role.",
+      "hasBedroom": "Has rooms",
+      "hasBedroomHint": "Enables room booking at this branch.",
+      "isActive": "Active branch",
+      "isActiveHint": "An inactive branch no longer appears in the traveller app.",
+      "submitCreate": "Create branch",
+      "submitEdit": "Save"
+    },
+    "rowActions": {
+      "edit": "Edit {name}",
+      "activate": "Activate {name}",
+      "deactivate": "Deactivate {name}",
+      "delete": "Delete {name}"
+    },
+    "confirmActivate": {
+      "title": "Activate this branch?",
+      "description": "{name} will reappear in the traveller app and can sell tickets again.",
+      "action": "Activate"
+    },
+    "confirmDeactivate": {
+      "title": "Deactivate this branch?",
+      "description": "{name} will disappear from the traveller app. Its staff, journeys and history are kept.",
+      "action": "Deactivate"
+    },
+    "confirmDelete": {
+      "title": "Delete this branch?",
+      "description": "{name} will be removed from your company, with no way to restore it from the dashboard. Staff assigned to it will end up with no branch.",
+      "action": "Delete"
+    },
+    "actions": {
+      "created": "Branch created.",
+      "updated": "Branch updated.",
+      "activated": "Branch activated.",
+      "deactivated": "Branch deactivated.",
+      "deleted": "Branch deleted.",
+      "invalidFields": "Some fields are invalid.",
+      "invalidRequest": "Invalid request.",
+      "forbidden": "This action is not allowed on this branch.",
+      "unknownAgency": "This station no longer exists. Choose another one.",
+      "cannotDeactivateOwn": "You cannot deactivate your own assigned branch.",
+      "cannotDeleteOwn": "You cannot delete your own assigned branch."
+    },
+    "contacts": {
+      "title": "Contacts",
+      "description": "Numbers shown to travellers to reach this branch.",
+      "empty": "No contact recorded.",
+      "add": "Add",
+      "phone": "Phone number",
+      "phoneHint": "With the international prefix, for example +237690000000.",
+      "label": "Label",
+      "labelHint": "Optional: “Counter”, “Luggage”…",
+      "delete": "Delete contact {phone}",
+      "created": "Contact added.",
+      "deleted": "Contact deleted.",
+      "duplicate": "This number is already recorded on a branch.",
+      "confirmDelete": {
+        "title": "Delete this contact?",
+        "description": "The number {phone} will no longer be shown to travellers.",
+        "action": "Delete"
+      }
+    },
+    "detail": {
+      "backToList": "Back to branches",
+      "manage": "Manage branch",
+      "readOnly": "You are viewing this branch read-only: only your home branch is editable day to day.",
+      "seeAll": "See all",
+      "stats": {
+        "revenue": "Recent revenue",
+        "passengers": "Passengers",
+        "lastDays": "Days recorded: {days}",
+        "staff": "Staff",
+        "staffHint": "Accounts attached to this branch.",
+        "openIssues": "Open reports",
+        "openIssuesHint": "Among the five most recent."
+      },
+      "recipes": {
+        "title": "Latest revenue",
+        "description": "One row per operating day."
+      },
+      "team": {
+        "title": "Team",
+        "description": "Staff assigned to this branch.",
+        "empty": "No staff member is attached to this branch."
+      },
+      "journeys": {
+        "title": "Latest journeys",
+        "description": "Most recently scheduled departures."
+      },
+      "issues": {
+        "title": "Reports"
+      }
+    }
+  },
+  "analytics": {
+    "periodLabel": "Reporting period",
+    "periods": {
+      "today": "Today",
+      "week": "7 days",
+      "month": "This month",
+      "quarter": "This quarter",
+      "year": "This year"
+    },
+    "metrics": {
+      "revenue": "Revenue",
+      "passengers": "Passengers",
+      "platformFee": "Travelas fees",
+      "platformFeeHint": "Platform share taken over the period.",
+      "seats": "Branches",
+      "seatsHint": "Branches created over the period."
+    },
+    "charts": {
+      "revenueTitle": "Revenue over time",
+      "passengersTitle": "Passengers carried",
+      "topSeatsTitle": "Best performing branches"
+    },
+    "changeValue": "{sign}{value}%",
+    "versusPrevious": "vs previous period",
+    "noData": "No data for this period.",
+    "unavailable": "These figures are temporarily unavailable.",
+    "unnamedSeat": "Unnamed branch",
+    "ticketCount": "Tickets: {count}",
+    "lastFive": "The five most recent."
+  },
+  "statistics": {
+    "title": "Statistics",
+    "subtitle": "Comparative analysis of {company} branches.",
+    "metrics": {
+      "averageTicket": "Average ticket",
+      "averageTicketHint": "Average amount of a paid ticket.",
+      "satisfaction": "Satisfaction",
+      "satisfactionHint": "Average rating left by travellers.",
+      "rating": "{rating} / 5"
+    },
+    "charts": {
+      "revenueVsFees": "Revenue collected and platform fees",
+      "seatRanking": "Branch ranking"
+    },
+    "disclaimer": "Figures come from daily revenue consolidated per branch. A few hours' gap with tickets sold is expected."
+  },
+  "revenue": {
+    "title": "Revenue",
+    "subtitle": "Daily revenue of {company} branches.",
+    "export": "Export to CSV",
+    "itemLabel": "records",
+    "tableCaption": "Daily revenue per branch",
+    "unnamedSeat": "Unnamed branch",
+    "totals": {
+      "revenue": "Revenue collected",
+      "platformFee": "Travelas fees",
+      "remaining": "Left to pay out",
+      "remainingHint": "Amount owed to branches on this page.",
+      "passengers": "Passengers",
+      "pageScope": "Totals for the page shown."
+    },
+    "columns": {
+      "date": "Date",
+      "seat": "Branch",
+      "revenue": "Revenue",
+      "platformFee": "Travelas fees",
+      "remaining": "Left to pay out",
+      "passengers": "Passengers"
+    },
+    "empty": {
+      "title": "No revenue recorded",
+      "description": "Revenue appears as soon as a branch sells its first ticket.",
+      "filteredTitle": "No revenue for this filter",
+      "filteredDescription": "Try another branch or clear the filter."
+    },
+    "filters": {
+      "seat": "Branch",
+      "allSeats": "All branches"
+    },
+    "csv": {
+      "date": "Date",
+      "seat": "Branch",
+      "revenue": "Revenue collected",
+      "platformFee": "Travelas fees",
+      "seatFee": "Branch commission",
+      "remaining": "Left to pay out",
+      "passengers": "Passengers",
+      "validTickets": "Validated tickets"
+    }
+  },
+  "company": {
+    "title": "My company",
+    "subtitle": "Public profile and booking settings.",
+    "status": {
+      "active": "Active",
+      "pending": "Awaiting activation",
+      "pendingHelp": "Your company has not been activated by Travelas yet. Branches and staff remain editable; ticket sales open on activation."
+    },
+    "inactiveBanner": {
+      "title": "Company awaiting activation",
+      "description": "Until Travelas activates your company, the journeys you create stay invisible in the travellers' mobile app.",
+      "link": "My company profile"
+    },
+    "rating": "Average rating",
+    "ratingValue": "{rating} / 5 — {count} reviews",
+    "noRating": "No reviews yet",
+    "fee": "Platform fees",
+    "feeValue": "Travelas fees: {percent}%",
+    "noFee": "No platform fees",
+    "mySeat": "My home branch",
+    "mySeatValue": "Attached to {seat}",
+    "form": {
+      "title": "Settings",
+      "description": "The name and images are shown to travellers in the Travelas app.",
+      "name": "Company name",
+      "nameHint": "As travellers will see it.",
+      "allowedAction": "Booking mode",
+      "allowedActionHint": "Applies to every journey by default; a journey may override it.",
+      "options": "Options",
+      "allowSeatNumberBook": "Seat-number booking",
+      "allowSeatNumberBookHint": "Travellers pick their seat when booking.",
+      "allowIssuesReport": "Incident reporting",
+      "allowIssuesReportHint": "Travellers may report a problem about one of your branches.",
+      "is2fAuthEnable": "Two-factor authentication",
+      "is2fAuthEnableHint": "Requires a verification code when your staff sign in.",
+      "logo": "Logo",
+      "logoHint": "Square, 2 MB maximum.",
+      "banner": "Banner",
+      "bannerHint": "Panoramic format, 2 MB maximum.",
+      "actions": {
+        "pay": "Immediate payment",
+        "reserve": "Booking without payment",
+        "both": "Payment or booking"
+      }
+    },
+    "actions": {
+      "invalidFields": "Some fields are invalid.",
+      "duplicateName": "A company already uses this name.",
+      "forbidden": "You are not allowed to edit this company.",
+      "failed": "The update failed.",
+      "updated": "Company updated."
+    }
+  },
+  "journeys": {
+    "title": "Journeys",
+    "subtitle": "Departures scheduled by {company} branches.",
+    "tableCaption": "Company journeys",
+    "itemLabel": "journeys",
+    "columns": {
+      "route": "Route",
+      "departure": "Departure",
+      "seat": "Branch",
+      "amount": "Price",
+      "tags": "Features"
+    },
+    "unknownPlace": "Unknown place",
+    "noStation": "Stations not set",
+    "noSeat": "Unknown branch",
+    "places": "Seats: {count}",
+    "vip": "VIP",
+    "daily": "Daily",
+    "hidden": "Hidden",
+    "empty": {
+      "title": "No journey scheduled",
+      "description": "Journeys are created by branch managers from their own space.",
+      "filteredTitle": "No journey for these filters",
+      "filteredDescription": "Broaden the search or clear the filters."
+    },
+    "filters": {
+      "seat": "Branch",
+      "allSeats": "All branches",
+      "visibility": "Visibility",
+      "allVisibilities": "All",
+      "visible": "Visible",
+      "hidden": "Hidden",
+      "class": "Class",
+      "allClasses": "All",
+      "vip": "VIP",
+      "standard": "Standard"
+    }
+  },
+  "tickets": {
+    "title": "Tickets",
+    "subtitle": "Tickets sold by {company} branches.",
+    "tableCaption": "Company tickets",
+    "itemLabel": "tickets",
+    "columns": {
+      "buyer": "Buyer",
+      "route": "Route",
+      "seat": "Branch",
+      "amount": "Amount paid",
+      "status": "Status"
+    },
+    "unknownBuyer": "Unknown buyer",
+    "places": "Seats: {count}",
+    "paid": "Paid",
+    "unpaid": "Pending",
+    "reservation": "Booking",
+    "validated": "Validated: {count}",
+    "empty": {
+      "title": "No ticket sold",
+      "description": "Tickets appear as soon as a branch makes its first sale.",
+      "filteredTitle": "No ticket for these filters",
+      "filteredDescription": "Broaden the search or clear the filters."
+    },
+    "filters": {
+      "searchLabel": "Search a ticket",
+      "searchPlaceholder": "Name, phone, station…",
+      "seat": "Branch",
+      "allSeats": "All branches",
+      "payment": "Payment",
+      "allPayments": "All",
+      "kind": "Type",
+      "allKinds": "All",
+      "purchase": "Purchase"
+    }
+  },
+  "incidents": {
+    "title": "Incidents",
+    "subtitle": "Reports and speeding events involving {company}.",
+    "tabsLabel": "Incident type",
+    "itemLabel": "reports",
+    "tabs": {
+      "reports": "Reports",
+      "speeding": "Speeding"
+    },
+    "open": "To handle",
+    "resolved": "Handled",
+    "resolve": "Handle",
+    "reopen": "Reopen",
+    "anonymous": "Anonymous report",
+    "unknownSeat": "Unknown branch",
+    "imageCount": "Photos: {count}",
+    "resolutionNote": "Resolution: {note}",
+    "empty": {
+      "title": "No report",
+      "description": "Travellers have not reported any problem about your branches.",
+      "filteredTitle": "No report for these filters",
+      "filteredDescription": "Broaden the search or clear the filters."
+    },
+    "filters": {
+      "searchLabel": "Search a report",
+      "searchPlaceholder": "Keyword from the report…",
+      "status": "Status",
+      "allStatuses": "All",
+      "seat": "Branch",
+      "allSeats": "All branches"
+    },
+    "resolveDialog": {
+      "title": "Close this report",
+      "description": "The report stays readable, marked as handled.",
+      "note": "Resolution note",
+      "noteHint": "Optional, but it is what will explain the decision six months from now.",
+      "action": "Mark as handled"
+    },
+    "actions": {
+      "invalidFields": "Some fields are invalid.",
+      "forbidden": "This report does not concern your company.",
+      "resolved": "Report marked as handled.",
+      "reopened": "Report reopened."
+    },
+    "speeding": {
+      "tableCaption": "Recorded speeding events",
+      "itemLabel": "records",
+      "speedValue": "{speed} km/h",
+      "over": "Over limit",
+      "unknownStreet": "Road not set",
+      "coordinates": "{lat}, {long}",
+      "anonymous": "Automatic record",
+      "columns": {
+        "speed": "Speed",
+        "location": "Location",
+        "date": "Date",
+        "reporter": "Reported by"
+      },
+      "empty": {
+        "title": "No speeding recorded",
+        "description": "The mobile app reported no overspeed on your vehicles.",
+        "filteredTitle": "No record for this search",
+        "filteredDescription": "Try another road name."
+      },
+      "filters": {
+        "searchPlaceholder": "Road name…"
+      }
+    }
+  },
+  "opinions": {
+    "title": "Customer reviews",
+    "subtitle": "What travellers say about {company}.",
+    "itemLabel": "reviews",
+    "anonymous": "Traveller",
+    "noComment": "Rating left without a comment.",
+    "ratingLabel": "{rating} out of 5",
+    "empty": {
+      "title": "No review",
+      "description": "Travellers have not rated your journeys yet.",
+      "filteredTitle": "No review for these filters",
+      "filteredDescription": "Broaden the search or clear the filters."
+    },
+    "filters": {
+      "searchLabel": "Search a review",
+      "searchPlaceholder": "Keyword from the comment…",
+      "rating": "Rating",
+      "allRatings": "All",
+      "positive": "Positive (4–5)",
+      "neutral": "Neutral (3–4)",
+      "negative": "Negative (0–2)"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Your personal details, security and display preferences.",
+    "profile": {
+      "title": "Profile",
+      "description": "These details identify you to your teams and to Travelas.",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "userName": "Username",
+      "userNameHint": "Can be used to sign in, alongside your email address.",
+      "phoneNumber": "Phone",
+      "phoneNumberHint": "International format, country code included."
+    },
+    "avatar": {
+      "hint": "JPEG or PNG, 2 MB maximum. The image is cropped to a square.",
+      "add": "Add a photo",
+      "replace": "Change photo",
+      "remove": "Remove photo",
+      "cropTitle": "Crop profile photo"
+    },
+    "email": {
+      "title": "Email address",
+      "cardDescription": "Used to sign in and to recover your password.",
+      "description": "Your current address stays active until the new one is confirmed with the code we send.",
+      "verified": "Verified",
+      "unverified": "Not verified",
+      "newEmail": "New address",
+      "currentPassword": "Current password",
+      "currentPasswordHint": "Asked to confirm the request really comes from you.",
+      "submit": "Send the code",
+      "pendingNotice": "A six-digit code was sent to <strong>{email}</strong>. It is valid for 5 minutes.",
+      "codeLabel": "Verification code",
+      "codeHint": "Enter the code sent to the new address.",
+      "confirm": "Confirm address",
+      "cancelChange": "Cancel the change"
+    },
+    "password": {
+      "title": "Password",
+      "description": "Your current password is required: an open session is not enough to change it.",
+      "current": "Current password",
+      "new": "New password",
+      "confirm": "Confirm new password",
+      "submit": "Change password"
+    },
+    "preferences": {
+      "title": "Preferences",
+      "description": "Interface language and theme.",
+      "language": "Language",
+      "languageHint": "Used by this dashboard, as well as by Travelas emails and notifications.",
+      "themeHint": "“System” follows your device setting."
+    },
+    "access": {
+      "title": "Access",
+      "description": "Granted by the platform. These details cannot be changed here.",
+      "role": "Role",
+      "company": "Company",
+      "companyActive": "Active",
+      "companyPending": "Pending approval",
+      "unnamedCompany": "Unnamed",
+      "noCompany": "No company",
+      "seat": "Home agency",
+      "noSeat": "None",
+      "userName": "Username"
+    },
+    "actions": {
+      "invalidFields": "Check the highlighted fields.",
+      "profileUpdated": "Profile updated.",
+      "profileFailed": "The profile could not be updated.",
+      "duplicateEmail": "This email address is already in use.",
+      "duplicatePhone": "This phone number is already in use.",
+      "duplicateUsername": "This username is already taken.",
+      "imageType": "Unsupported format. Choose a JPEG or a PNG.",
+      "imageTooLarge": "Image too large. 2 MB maximum.",
+      "imageRequired": "Choose an image.",
+      "avatarUpdated": "Profile photo updated.",
+      "avatarRemoved": "Profile photo removed.",
+      "avatarFailed": "The photo could not be saved.",
+      "passwordUpdated": "Password changed.",
+      "passwordFailed": "The password could not be changed.",
+      "emailRequested": "Code sent to the new address.",
+      "emailRequestFailed": "The request could not be sent.",
+      "emailChanged": "Email address changed.",
+      "emailConfirmFailed": "The address could not be confirmed.",
+      "emailCancelled": "Email change cancelled.",
+      "emailCancelFailed": "The change could not be cancelled.",
+      "codeInvalid": "Incorrect code.",
+      "codeExpired": "Code expired. Start the request again.",
+      "noPendingEmail": "No email change in progress.",
+      "langUpdated": "Language saved.",
+      "langFailed": "The language could not be saved on your account."
+    }
+  }
+}

@@ -1,0 +1,1042 @@
+{
+  "metadata": {
+    "description": "Espace d'administration des entreprises de transport partenaires Travelas.",
+    "login": "Connexion",
+    "register": "Créer mon entreprise",
+    "dashboard": "Vue d'ensemble",
+    "onboarding": "Créer mon entreprise",
+    "seats": "Agences",
+    "staff": "Personnel",
+    "forgotPassword": "Mot de passe oublié",
+    "company": "Mon entreprise",
+    "revenue": "Recettes",
+    "statistics": "Statistiques",
+    "journeys": "Trajets",
+    "tickets": "Billets",
+    "incidents": "Incidents",
+    "opinions": "Avis clients",
+    "settings": "Paramètres"
+  },
+  "common": {
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "close": "Fermer",
+    "save": "Enregistrer",
+    "retry": "Réessayer",
+    "reset": "Réinitialiser",
+    "search": "Rechercher",
+    "actions": "Actions",
+    "loading": "Chargement…",
+    "working": "En cours…",
+    "saving": "Enregistrement…",
+    "none": "Aucun",
+    "unnamed": "Sans nom",
+    "showPassword": "Afficher le mot de passe",
+    "hidePassword": "Masquer le mot de passe",
+    "yourCompany": "votre entreprise",
+    "myCompany": "Mon entreprise",
+    "cropper": {
+      "instructions": "Faites glisser l'image pour la cadrer, puis ajustez le zoom.",
+      "frameLabel": "Zone de recadrage : flèches pour déplacer, + et − pour zoomer",
+      "zoom": "Zoom",
+      "zoomIn": "Zoomer",
+      "zoomOut": "Dézoomer",
+      "recenter": "Recentrer",
+      "apply": "Appliquer",
+      "processing": "Traitement…",
+      "loading": "Chargement de l'image…",
+      "failed": "Cette image n'a pas pu être ouverte. Essayez-en une autre."
+    },
+    "unknown": "Inconnu"
+  },
+  "theme": {
+    "label": "Thème",
+    "light": "Clair",
+    "dark": "Sombre",
+    "system": "Système"
+  },
+  "locale": {
+    "label": "Langue"
+  },
+  "brand": {
+    "travelasLogo": "Logo Travelas",
+    "novatechLogo": "Logo Novatech",
+    "dashboardHome": "Travelas — tableau de bord",
+    "copyright": "© {year} Novatech",
+    "poweredBy": "Propulsé par Travelas"
+  },
+  "nav": {
+    "main": "Navigation principale",
+    "company": "Entreprise",
+    "soon": "bientôt",
+    "collapse": "Replier la barre latérale",
+    "expand": "Déplier la barre latérale",
+    "sections": {
+      "steering": "Pilotage",
+      "organization": "Organisation",
+      "operations": "Exploitation",
+      "account": "Compte"
+    },
+    "items": {
+      "dashboard": "Vue d'ensemble",
+      "statistics": "Statistiques",
+      "revenue": "Chiffre d'affaires",
+      "company": "Mon entreprise",
+      "seats": "Agences",
+      "staff": "Personnel",
+      "journeys": "Trajets",
+      "tickets": "Billets",
+      "incidents": "Incidents",
+      "opinions": "Avis clients",
+      "settings": "Paramètres"
+    }
+  },
+  "roles": {
+    "super_admin": "Super administrateur",
+    "company_admin": "Chef d'entreprise",
+    "agency_admin": "Chef d'agence",
+    "company_agent": "Agent",
+    "company_driver": "Chauffeur",
+    "user": "Client"
+  },
+  "topbar": {
+    "logout": "Déconnexion",
+    "logoutConfirmTitle": "Se déconnecter ?",
+    "logoutConfirmDescription": "Votre session sera fermée sur cet appareil. Vous devrez saisir à nouveau vos identifiants pour revenir sur le tableau de bord.",
+    "logoutFailed": "La déconnexion a échoué. Réessayez."
+  },
+  "auth": {
+    "appSubtitle": "Espace réservé aux entreprises de transport partenaires.",
+    "loginTitle": "Connexion",
+    "loginSubtitle": "Espace réservé aux administrateurs d'entreprise.",
+    "loginField": "E-mail ou identifiant",
+    "passwordField": "Mot de passe",
+    "newPasswordField": "Nouveau mot de passe",
+    "newPasswordHint": "12 caractères minimum, avec majuscule, chiffre et caractère spécial.",
+    "submit": "Se connecter",
+    "submitting": "Connexion…",
+    "noAccount": "Pas encore de compte ?",
+    "createCompany": "Créer mon entreprise",
+    "resumeVerification": "Terminer la vérification de mon e-mail",
+    "steps": {
+      "label": "Étapes de l'inscription",
+      "position": "Étape {current} sur {total}",
+      "account": "Compte",
+      "verification": "Vérification",
+      "company": "Entreprise"
+    },
+    "register": {
+      "title": "Créer votre compte",
+      "subtitle": "Le compte administrateur de votre entreprise de transport.",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "E-mail professionnel",
+      "emailHint": "C'est là qu'arrivera votre code de vérification.",
+      "phone": "Téléphone",
+      "phoneHint": "Avec l'indicatif pays, ex. +2250700000000",
+      "userName": "Identifiant de connexion",
+      "userNameHint": "Lettres, chiffres, point, tiret et underscore.",
+      "password": "Mot de passe",
+      "confirmPassword": "Confirmer le mot de passe",
+      "passwordRules": {
+        "length": "12 caractères minimum",
+        "lowercase": "Une minuscule",
+        "uppercase": "Une majuscule",
+        "digit": "Un chiffre",
+        "special": "Un caractère spécial"
+      },
+      "submit": "Créer mon compte",
+      "submitting": "Création du compte…",
+      "legal": "Ce compte donne accès aux données financières et nominatives de votre entreprise. Il doit rester personnel.",
+      "haveAccount": "Vous avez déjà un compte ?",
+      "signIn": "Se connecter",
+      "errors": {
+        "failed": "La création du compte a échoué. Vérifiez vos informations et réessayez.",
+        "rateLimited": "Trop de tentatives. Réessayez dans quelques minutes.",
+        "invalidRequest": "Requête invalide.",
+        "duplicateEmail": "Un compte existe déjà avec cet e-mail.",
+        "duplicatePhone": "Un compte existe déjà avec ce numéro.",
+        "duplicateUsername": "Cet identifiant est déjà pris."
+      }
+    },
+    "verify": {
+      "title": "Vérifiez votre e-mail",
+      "subtitle": "Un code à six chiffres vient d'être envoyé à :",
+      "codeField": "Code de vérification",
+      "codeHint": "Le code expire au bout de 5 minutes.",
+      "submit": "Vérifier mon e-mail",
+      "submitting": "Vérification…",
+      "signingIn": "Ouverture de votre espace…",
+      "spam": "Rien reçu ? Pensez à regarder dans vos courriers indésirables.",
+      "resend": "Renvoyer le code",
+      "resending": "Envoi…",
+      "resendIn": "Renvoyer le code dans {seconds} s",
+      "resent": "Un nouveau code vient de vous être envoyé.",
+      "changeEmail": "Corriger l'adresse e-mail",
+      "newEmailField": "Nouvelle adresse e-mail",
+      "cancelEmail": "Annuler",
+      "confirmEmail": "Envoyer le code",
+      "verifiedNotice": "Votre e-mail est vérifié. Connectez-vous pour poursuivre.",
+      "errors": {
+        "invalid": "Code incorrect. Vérifiez le dernier e-mail reçu.",
+        "expired": "Ce code a expiré. Demandez-en un nouveau.",
+        "noPending": "Votre inscription n'est plus en cours. Recommencez-la.",
+        "rateLimited": "Trop de tentatives. Réessayez dans quelques minutes.",
+        "resendFailed": "L'envoi a échoué. Réessayez dans un instant.",
+        "changeEmailFailed": "Cette adresse n'a pas pu être enregistrée. Essayez-en une autre."
+      }
+    },
+    "resetSteps": {
+      "label": "Étapes de la réinitialisation",
+      "position": "Étape {current} sur {total}",
+      "email": "Adresse",
+      "code": "Code",
+      "password": "Mot de passe"
+    },
+    "forgotPassword": {
+      "link": "Mot de passe oublié ?",
+      "title": "Mot de passe oublié",
+      "subtitle": "Indiquez l'adresse de votre compte : un code de vérification vous y sera envoyé.",
+      "emailField": "E-mail du compte",
+      "emailHint": "L'adresse avec laquelle vous vous êtes inscrit.",
+      "send": "Recevoir un code",
+      "sending": "Envoi…",
+      "backToLogin": "Retour à la connexion",
+      "codeTitle": "Saisissez le code",
+      "codeSubtitle": "Si un compte existe pour cette adresse, un code à six chiffres vient d'y être envoyé :",
+      "codeField": "Code de vérification",
+      "codeHint": "Le code expire au bout de 5 minutes.",
+      "verify": "Valider le code",
+      "verifying": "Vérification…",
+      "spam": "Rien reçu ? Pensez à regarder dans vos courriers indésirables.",
+      "resend": "Renvoyer le code",
+      "resending": "Envoi…",
+      "resendIn": "Renvoyer le code dans {seconds} s",
+      "resent": "Un nouveau code vient d'être envoyé.",
+      "changeEmail": "Utiliser une autre adresse",
+      "resetTitle": "Nouveau mot de passe",
+      "resetSubtitle": "Choisissez un mot de passe que vous n'utilisez nulle part ailleurs.",
+      "newPassword": "Nouveau mot de passe",
+      "confirmPassword": "Confirmer le mot de passe",
+      "reset": "Changer mon mot de passe",
+      "resetting": "Changement…",
+      "done": "Mot de passe changé.",
+      "resetNotice": "Votre mot de passe a été changé. Connectez-vous avec le nouveau.",
+      "errors": {
+        "failed": "L'opération a échoué. Réessayez dans un instant.",
+        "invalidCode": "Code incorrect. Vérifiez le dernier e-mail reçu.",
+        "expiredCode": "Ce code a expiré. Demandez-en un nouveau.",
+        "noPending": "Votre demande n'est plus en cours. Recommencez-la.",
+        "expiredSession": "Le délai est dépassé. Demandez un nouveau code.",
+        "samePassword": "Choisissez un mot de passe différent du précédent.",
+        "weakPassword": "Ce mot de passe ne respecte pas les règles de sécurité.",
+        "rateLimited": "Trop de tentatives. Réessayez dans quelques minutes."
+      }
+    },
+    "status": {
+      "login_successfully": "Connexion réussie.",
+      "wrong_password": "Identifiants invalides.",
+      "account_doesnt_exist": "Identifiants invalides.",
+      "account_not_verified": "Votre compte n'est pas encore vérifié. Consultez votre boîte mail.",
+      "need_password_update": "Vous devez définir un nouveau mot de passe avant de continuer.",
+      "account_blocked": "Votre compte est bloqué pour activité suspecte. Contactez le support.",
+      "account_blocked_by_company": "Votre compte a été désactivé par votre entreprise."
+    },
+    "errors": {
+      "failed": "Connexion impossible.",
+      "rateLimited": "Trop de tentatives. Réessayez dans un instant.",
+      "invalidRequest": "Requête invalide.",
+      "wrongDashboard": "Ce dashboard est réservé aux administrateurs d'entreprise."
+    }
+  },
+  "dashboard": {
+    "greeting": "Bonjour {firstName}",
+    "steering": "Pilotage de {company}.",
+    "noCompany": "Créez votre entreprise pour commencer à piloter vos agences.",
+    "noCompanyHelp": "Votre compte est actif, mais aucune entreprise ne lui est rattachée. Agences, personnel et statistiques s'ouvrent dès cette étape terminée.",
+    "noCompanyCta": "Déclarer mon entreprise",
+    "shortcuts": {
+      "title": "Accès rapides",
+      "seats": "Gérer mes agences",
+      "staff": "Gérer mon personnel",
+      "revenue": "Consulter les recettes",
+      "incidents": "Traiter les incidents",
+      "staffCount": "Collaborateurs enregistrés : {count}"
+    }
+  },
+  "onboarding": {
+    "welcome": "Bienvenue {firstName}",
+    "subtitle": "Dernière étape : déclarez l'entreprise que vous dirigez. Elle deviendra le cadre de vos agences, de votre personnel et de vos recettes.",
+    "form": {
+      "name": "Nom de l'entreprise",
+      "nameHint": "Le nom sous lequel vos voyageurs vous connaissent.",
+      "logo": "Logo",
+      "logoHint": "Affiché dans l'application des voyageurs.",
+      "banner": "Bannière",
+      "bannerHint": "Image de couverture de votre fiche entreprise.",
+      "imagePick": "Choisir un fichier",
+      "imageReplace": "Remplacer",
+      "imageRemove": "Retirer",
+      "imageRecrop": "Recadrer",
+      "imageDropHint": "Glissez une image ici ou cliquez pour la choisir.",
+      "imageZone": "Déposer ou choisir une image",
+      "imageRatioSquare": "Format carré 1:1.",
+      "imageRatioWide": "Format bannière 2:1.",
+      "cropLogo": "Recadrer le logo",
+      "cropBanner": "Recadrer la bannière",
+      "imageConstraints": "Facultatif — PNG, JPG ou WebP, 2 Mo maximum. Les images sont recadrées avant l'envoi.",
+      "submit": "Créer mon entreprise",
+      "submitting": "Création…"
+    },
+    "next": {
+      "title": "Ce qui vous attend ensuite",
+      "seats": {
+        "title": "Déclarer vos agences",
+        "body": "Chaque agence est rattachée à une gare et reçoit son propre personnel."
+      },
+      "staff": {
+        "title": "Inviter votre personnel",
+        "body": "Chefs d'agence, agents et chauffeurs reçoivent leurs accès par e-mail."
+      },
+      "steering": {
+        "title": "Piloter votre activité",
+        "body": "Chiffre d'affaires, billets vendus, incidents et avis clients."
+      }
+    },
+    "actions": {
+      "created": "Entreprise créée. Bienvenue sur votre espace Travelas.",
+      "failed": "La création de l'entreprise a échoué. Réessayez dans un instant.",
+      "invalidFields": "Certains champs sont invalides.",
+      "duplicateName": "Une entreprise porte déjà ce nom.",
+      "imageType": "Format non pris en charge. Utilisez un PNG, un JPG ou un WebP.",
+      "imageTooLarge": "Image trop lourde. 2 Mo maximum."
+    }
+  },
+  "staff": {
+    "title": "Personnel",
+    "subtitle": "Chefs d'agence, agents et chauffeurs de {company}.",
+    "tableCaption": "Personnel de l'entreprise",
+    "itemLabel": "collaborateurs",
+    "columns": {
+      "member": "Collaborateur",
+      "role": "Rôle",
+      "seat": "Agence",
+      "status": "Statut"
+    },
+    "you": "(vous)",
+    "unassigned": "Non affecté",
+    "statusValues": {
+      "blocked": "Bloqué",
+      "active": "Actif",
+      "inactive": "Inactif"
+    },
+    "empty": {
+      "title": "Aucun collaborateur",
+      "description": "Ajoutez vos chefs d'agence, agents et chauffeurs pour qu'ils accèdent aux applications Travelas.",
+      "filteredTitle": "Aucun collaborateur ne correspond",
+      "filteredDescription": "Modifiez ou réinitialisez les filtres pour élargir la recherche."
+    },
+    "filters": {
+      "searchLabel": "Rechercher un collaborateur",
+      "searchPlaceholder": "Nom, e-mail, téléphone…",
+      "role": "Rôle",
+      "allRoles": "Tous les rôles",
+      "status": "Statut",
+      "allStatuses": "Tous",
+      "active": "Actifs",
+      "blocked": "Bloqués"
+    },
+    "create": "Ajouter un collaborateur",
+    "form": {
+      "createTitle": "Ajouter un collaborateur",
+      "editTitle": "Modifier le collaborateur",
+      "createDescription": "Un mot de passe provisoire sera envoyé par e-mail au collaborateur.",
+      "editDescription": "Les modifications prennent effet immédiatement.",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "E-mail",
+      "phone": "Téléphone",
+      "phoneHint": "Avec l'indicatif pays, ex. +2250700000000",
+      "role": "Rôle",
+      "seat": "Agence de rattachement",
+      "seatHintEmpty": "Aucune agence déclarée pour le moment.",
+      "seatHint": "Le rattachement peut être modifié plus tard.",
+      "mainSeat": "(principale)",
+      "cni": "Numéro de pièce d'identité",
+      "cniHint": "Facultatif",
+      "lang": "Langue",
+      "submitCreate": "Créer le compte",
+      "submitEdit": "Enregistrer"
+    },
+    "rowActions": {
+      "edit": "Modifier {name}",
+      "block": "Bloquer {name}",
+      "unblock": "Débloquer {name}",
+      "delete": "Supprimer {name}"
+    },
+    "confirmBlock": {
+      "title": "Bloquer ce collaborateur ?",
+      "description": "{name} ne pourra plus se connecter. Les billets déjà émis restent valables.",
+      "action": "Bloquer"
+    },
+    "confirmUnblock": {
+      "title": "Débloquer ce collaborateur ?",
+      "description": "{name} pourra de nouveau se connecter aux applications Travelas.",
+      "action": "Débloquer"
+    },
+    "confirmDelete": {
+      "title": "Supprimer ce collaborateur ?",
+      "description": "Le compte de {name} sera retiré de votre entreprise. Son historique d'activité est conservé.",
+      "action": "Supprimer"
+    },
+    "actions": {
+      "created": "Collaborateur créé. Ses identifiants lui ont été envoyés par e-mail.",
+      "updated": "Collaborateur mis à jour.",
+      "blocked": "Collaborateur bloqué.",
+      "unblocked": "Collaborateur débloqué.",
+      "deleted": "Collaborateur supprimé.",
+      "invalidFields": "Certains champs sont invalides.",
+      "invalidRequest": "Requête invalide.",
+      "forbidden": "Action non autorisée sur ce collaborateur.",
+      "cannotBlockSelf": "Vous ne pouvez pas bloquer votre propre compte.",
+      "cannotDeleteSelf": "Vous ne pouvez pas supprimer votre propre compte.",
+      "duplicateEmail": "Cet e-mail est déjà utilisé.",
+      "duplicatePhone": "Ce numéro est déjà utilisé.",
+      "duplicateUsername": "Cet identifiant est déjà pris. Modifiez le prénom ou le nom."
+    }
+  },
+  "languages": {
+    "fr": "Français",
+    "en": "Anglais"
+  },
+  "pagination": {
+    "label": "Pagination",
+    "noResults": "Aucun résultat",
+    "rangeOf": "{from}–{to} sur {total} {item}",
+    "range": "{from}–{to} {item}",
+    "items": "éléments",
+    "perPage": "Par page",
+    "previous": "Page précédente",
+    "next": "Page suivante",
+    "page": "Page {page}",
+    "pageOf": "Page {page} / {pageCount}"
+  },
+  "skeleton": {
+    "loadingData": "Chargement des données",
+    "loadingStats": "Chargement des indicateurs"
+  },
+  "errors": {
+    "boundaryTitle": "Cette section n'a pas pu être chargée",
+    "boundaryDescription": "L'opération n'a pas abouti. Réessayez ; si le problème persiste, transmettez la référence ci-dessous au support.",
+    "publicTitle": "Page indisponible",
+    "publicDescription": "Impossible d'afficher cette page pour le moment. Réessayez dans un instant.",
+    "globalTitle": "Une erreur est survenue",
+    "globalDescription": "L'opération n'a pas pu aboutir. Si le problème persiste, contactez le support en indiquant la référence ci-dessous.",
+    "rootTitle": "Service indisponible",
+    "rootDescription": "L'application n'a pas pu démarrer. Rechargez la page ; si le problème persiste, contactez le support avec la référence ci-dessous.",
+    "reload": "Recharger",
+    "notFoundTitle": "Page introuvable",
+    "notFoundDescription": "Cette page n'existe pas ou n'est pas accessible avec votre compte.",
+    "backToDashboard": "Retour au tableau de bord",
+    "operationFailed": "L'opération a échoué. Réessayez dans un instant.",
+    "unavailable": "Le service est momentanément indisponible. Réessayez dans un instant.",
+    "unexpected": "Une erreur inattendue est survenue.",
+    "serverError": "Erreur serveur",
+    "forbiddenOrigin": "Origine de la requête non autorisée."
+  },
+  "validation": {
+    "firstNameRequired": "Prénom requis",
+    "lastNameRequired": "Nom requis",
+    "emailInvalid": "E-mail invalide",
+    "companyNameRequired": "Nom de l'entreprise requis",
+    "confirmPasswordRequired": "Confirmez le mot de passe",
+    "codeInvalid": "Code à 6 chiffres attendu",
+    "max20": "20 caractères maximum",
+    "max30": "30 caractères maximum",
+    "max50": "50 caractères maximum",
+    "max15": "15 caractères maximum",
+    "max100": "100 caractères maximum",
+    "seatNameRequired": "Nom de l'agence requis",
+    "agencyRequired": "Choisissez une gare de rattachement",
+    "latitudeInvalid": "Latitude invalide, entre -90 et 90",
+    "longitudeInvalid": "Longitude invalide, entre -180 et 180",
+    "coordinatesIncomplete": "Renseignez les deux coordonnées ou aucune",
+    "phoneInternational": "Format international attendu, ex. +2250700000000",
+    "roleRequired": "Choisissez un rôle",
+    "loginRequired": "Renseignez votre e-mail ou nom d'utilisateur",
+    "loginTooLong": "Identifiant trop long",
+    "passwordRequired": "Renseignez votre mot de passe",
+    "passwordTooLong": "Mot de passe trop long",
+    "passwordMin12": "12 caractères minimum",
+    "passwordMax128": "128 caractères maximum",
+    "passwordLowercase": "Au moins une minuscule",
+    "passwordUppercase": "Au moins une majuscule",
+    "passwordDigit": "Au moins un chiffre",
+    "passwordSpecial": "Au moins un caractère spécial",
+    "passwordWeak": "Mot de passe trop faible",
+    "usernameMin3": "3 caractères minimum",
+    "usernameCharset": "Lettres, chiffres, point, tiret et underscore uniquement",
+    "phoneInvalid": "Numéro invalide",
+    "phoneDigits": "Chiffres uniquement, indicatif optionnel",
+    "passwordMismatch": "Les mots de passe ne correspondent pas",
+    "max500": "500 caractères au maximum",
+    "passwordSameAsCurrent": "Le nouveau mot de passe doit être différent de l'actuel"
+  },
+  "seats": {
+    "unnamed": "Agence sans nom",
+    "unnamedAgency": "Gare sans nom",
+    "unknownCity": "Ville non renseignée",
+    "title": "Agences",
+    "subtitle": "Les agences de {company} et leur gare de rattachement.",
+    "tableCaption": "Agences de l'entreprise",
+    "itemLabel": "agences",
+    "create": "Ajouter une agence",
+    "main": "Principale",
+    "noAgency": "Aucune gare",
+    "noStreet": "Adresse non renseignée",
+    "truncated": "Seules les {limit} premières agences sont affichées. Affinez la recherche ou contactez le support si votre entreprise en compte davantage.",
+    "columns": {
+      "seat": "Agence",
+      "agency": "Gare",
+      "services": "Services",
+      "status": "Statut"
+    },
+    "services": {
+      "bedroom": "Chambres",
+      "seatNumberBook": "Choix du siège",
+      "noSeatNumberBook": "Sans choix du siège"
+    },
+    "statusValues": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "empty": {
+      "title": "Aucune agence",
+      "description": "Déclarez vos agences pour y affecter du personnel, y créer des trajets et y suivre les recettes.",
+      "filteredTitle": "Aucune agence ne correspond",
+      "filteredDescription": "Modifiez ou réinitialisez les filtres pour élargir la recherche."
+    },
+    "filters": {
+      "searchLabel": "Rechercher une agence",
+      "searchPlaceholder": "Nom, adresse, gare, ville…",
+      "status": "Statut",
+      "allStatuses": "Toutes",
+      "active": "Actives",
+      "inactive": "Inactives"
+    },
+    "form": {
+      "createTitle": "Ajouter une agence",
+      "editTitle": "Modifier l'agence",
+      "createDescription": "L'agence sera immédiatement disponible pour y affecter du personnel.",
+      "editDescription": "Les modifications prennent effet immédiatement.",
+      "name": "Nom de l'agence",
+      "agency": "Gare de rattachement",
+      "agencyPlaceholder": "Choisissez une gare",
+      "agencyHint": "La gare détermine la ville de l'agence.",
+      "agencyHintEmpty": "Aucune gare n'est encore référencée. Contactez le support Travelas.",
+      "street": "Adresse",
+      "streetHint": "Facultatif — rue, quartier ou point de repère.",
+      "booking": "Choix du siège à la réservation",
+      "bookingHint": "« Réglage de l'entreprise » laisse l'agence suivre le paramétrage global.",
+      "bookingInherit": "Réglage de l'entreprise",
+      "bookingYes": "Autorisé",
+      "bookingNo": "Interdit",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "coordinatesHint": "Facultatif — les deux coordonnées vont de pair.",
+      "isMain": "Agence principale",
+      "isMainHint": "Le siège de l'entreprise. Une seule agence devrait porter ce rôle.",
+      "hasBedroom": "Dispose de chambres",
+      "hasBedroomHint": "Permet la réservation de chambres dans cette agence.",
+      "isActive": "Agence active",
+      "isActiveHint": "Une agence inactive n'apparaît plus dans l'application des voyageurs.",
+      "submitCreate": "Créer l'agence",
+      "submitEdit": "Enregistrer"
+    },
+    "rowActions": {
+      "edit": "Modifier {name}",
+      "activate": "Activer {name}",
+      "deactivate": "Désactiver {name}",
+      "delete": "Supprimer {name}"
+    },
+    "confirmActivate": {
+      "title": "Activer cette agence ?",
+      "description": "{name} réapparaîtra dans l'application des voyageurs et pourra de nouveau vendre des billets.",
+      "action": "Activer"
+    },
+    "confirmDeactivate": {
+      "title": "Désactiver cette agence ?",
+      "description": "{name} disparaîtra de l'application des voyageurs. Son personnel, ses trajets et son historique sont conservés.",
+      "action": "Désactiver"
+    },
+    "confirmDelete": {
+      "title": "Supprimer cette agence ?",
+      "description": "{name} sera retirée de votre entreprise, sans possibilité de restauration depuis le dashboard. Le personnel qui y est affecté se retrouvera sans agence.",
+      "action": "Supprimer"
+    },
+    "actions": {
+      "created": "Agence créée.",
+      "updated": "Agence mise à jour.",
+      "activated": "Agence activée.",
+      "deactivated": "Agence désactivée.",
+      "deleted": "Agence supprimée.",
+      "invalidFields": "Certains champs sont invalides.",
+      "invalidRequest": "Requête invalide.",
+      "forbidden": "Action non autorisée sur cette agence.",
+      "unknownAgency": "Cette gare n'existe plus. Choisissez-en une autre.",
+      "cannotDeactivateOwn": "Vous ne pouvez pas désactiver votre propre agence de rattachement.",
+      "cannotDeleteOwn": "Vous ne pouvez pas supprimer votre propre agence de rattachement."
+    },
+    "contacts": {
+      "title": "Contacts",
+      "description": "Numéros affichés aux voyageurs pour joindre cette agence.",
+      "empty": "Aucun contact enregistré.",
+      "add": "Ajouter",
+      "phone": "Numéro de téléphone",
+      "phoneHint": "Avec l'indicatif international, par exemple +237690000000.",
+      "label": "Libellé",
+      "labelHint": "Facultatif : « Guichet », « Bagages »…",
+      "delete": "Supprimer le contact {phone}",
+      "created": "Contact ajouté.",
+      "deleted": "Contact supprimé.",
+      "duplicate": "Ce numéro est déjà enregistré sur une agence.",
+      "confirmDelete": {
+        "title": "Supprimer ce contact ?",
+        "description": "Le numéro {phone} ne sera plus affiché aux voyageurs.",
+        "action": "Supprimer"
+      }
+    },
+    "detail": {
+      "backToList": "Retour aux agences",
+      "manage": "Gérer l'agence",
+      "readOnly": "Vous consultez cette agence en lecture seule : seule votre agence de rattachement est modifiable au quotidien.",
+      "seeAll": "Tout voir",
+      "stats": {
+        "revenue": "Recette récente",
+        "passengers": "Passagers",
+        "lastDays": "Derniers jours enregistrés : {days}",
+        "staff": "Collaborateurs",
+        "staffHint": "Comptes rattachés à cette agence.",
+        "openIssues": "Signalements ouverts",
+        "openIssuesHint": "Parmi les cinq plus récents."
+      },
+      "recipes": {
+        "title": "Dernières recettes",
+        "description": "Une ligne par journée d'exploitation."
+      },
+      "team": {
+        "title": "Équipe",
+        "description": "Personnel affecté à cette agence.",
+        "empty": "Aucun collaborateur n'est rattaché à cette agence."
+      },
+      "journeys": {
+        "title": "Derniers trajets",
+        "description": "Départs les plus récemment programmés."
+      },
+      "issues": {
+        "title": "Signalements"
+      }
+    }
+  },
+  "analytics": {
+    "periodLabel": "Période analysée",
+    "periods": {
+      "today": "Aujourd'hui",
+      "week": "7 jours",
+      "month": "Ce mois-ci",
+      "quarter": "Ce trimestre",
+      "year": "Cette année"
+    },
+    "metrics": {
+      "revenue": "Chiffre d'affaires",
+      "passengers": "Passagers",
+      "platformFee": "Frais Travelas",
+      "platformFeeHint": "Part prélevée par la plateforme sur la période.",
+      "seats": "Agences",
+      "seatsHint": "Agences créées sur la période."
+    },
+    "charts": {
+      "revenueTitle": "Évolution du chiffre d'affaires",
+      "passengersTitle": "Passagers transportés",
+      "topSeatsTitle": "Agences les plus performantes"
+    },
+    "changeValue": "{sign}{value} %",
+    "versusPrevious": "vs période précédente",
+    "noData": "Aucune donnée sur cette période.",
+    "unavailable": "Ces indicateurs sont momentanément indisponibles.",
+    "unnamedSeat": "Agence sans nom",
+    "ticketCount": "Billets : {count}",
+    "lastFive": "Les cinq plus récents."
+  },
+  "statistics": {
+    "title": "Statistiques",
+    "subtitle": "Analyse comparative des agences de {company}.",
+    "metrics": {
+      "averageTicket": "Panier moyen",
+      "averageTicketHint": "Montant moyen d'un billet payé.",
+      "satisfaction": "Satisfaction",
+      "satisfactionHint": "Note moyenne laissée par les voyageurs.",
+      "rating": "{rating} / 5"
+    },
+    "charts": {
+      "revenueVsFees": "Recette encaissée et frais de plateforme",
+      "seatRanking": "Classement des agences"
+    },
+    "disclaimer": "Les agrégats proviennent des recettes journalières consolidées par agence. Un écart de quelques heures avec les billets vendus est normal."
+  },
+  "revenue": {
+    "title": "Recettes",
+    "subtitle": "Recettes journalières des agences de {company}.",
+    "export": "Exporter en CSV",
+    "itemLabel": "recettes",
+    "tableCaption": "Recettes journalières par agence",
+    "unnamedSeat": "Agence sans nom",
+    "totals": {
+      "revenue": "Recette encaissée",
+      "platformFee": "Frais Travelas",
+      "remaining": "Reste à reverser",
+      "remainingHint": "Somme due aux agences sur cette page.",
+      "passengers": "Passagers",
+      "pageScope": "Totaux de la page affichée."
+    },
+    "columns": {
+      "date": "Date",
+      "seat": "Agence",
+      "revenue": "Recette",
+      "platformFee": "Frais Travelas",
+      "remaining": "Reste à reverser",
+      "passengers": "Passagers"
+    },
+    "empty": {
+      "title": "Aucune recette enregistrée",
+      "description": "Les recettes apparaissent dès qu'une agence vend son premier billet.",
+      "filteredTitle": "Aucune recette pour ce filtre",
+      "filteredDescription": "Essayez une autre agence ou réinitialisez le filtre."
+    },
+    "filters": {
+      "seat": "Agence",
+      "allSeats": "Toutes les agences"
+    },
+    "csv": {
+      "date": "Date",
+      "seat": "Agence",
+      "revenue": "Recette encaissée",
+      "platformFee": "Frais Travelas",
+      "seatFee": "Commission agence",
+      "remaining": "Reste à reverser",
+      "passengers": "Passagers",
+      "validTickets": "Billets validés"
+    }
+  },
+  "company": {
+    "title": "Mon entreprise",
+    "subtitle": "Fiche publique et réglages de réservation.",
+    "status": {
+      "active": "Active",
+      "pending": "En attente d'activation",
+      "pendingHelp": "Votre entreprise n'est pas encore activée par Travelas. Vos agences et votre personnel restent modifiables ; la vente de billets s'ouvrira à l'activation."
+    },
+    "inactiveBanner": {
+      "title": "Entreprise en attente d'activation",
+      "description": "Tant que Travelas n'a pas activé votre entreprise, les trajets que vous créez restent invisibles dans l'application mobile des voyageurs.",
+      "link": "Ma fiche entreprise"
+    },
+    "rating": "Note moyenne",
+    "ratingValue": "{rating} / 5 — {count} avis",
+    "noRating": "Aucun avis pour l'instant",
+    "fee": "Frais de plateforme",
+    "feeValue": "Frais Travelas : {percent} %",
+    "noFee": "Aucun frais de plateforme",
+    "mySeat": "Mon agence de rattachement",
+    "mySeatValue": "Rattaché à {seat}",
+    "form": {
+      "title": "Réglages",
+      "description": "Le nom et les visuels sont visibles des voyageurs dans l'application Travelas.",
+      "name": "Nom de l'entreprise",
+      "nameHint": "Tel qu'il apparaîtra aux voyageurs.",
+      "allowedAction": "Mode de réservation",
+      "allowedActionHint": "S'applique par défaut à tous les trajets ; un trajet peut le surcharger.",
+      "options": "Options",
+      "allowSeatNumberBook": "Réservation par numéro de place",
+      "allowSeatNumberBookHint": "Le voyageur choisit son siège dans le bus au moment de réserver.",
+      "allowIssuesReport": "Signalement d'incidents",
+      "allowIssuesReportHint": "Les voyageurs peuvent signaler un problème sur une de vos agences.",
+      "is2fAuthEnable": "Double authentification",
+      "is2fAuthEnableHint": "Exige un code de vérification à la connexion de vos collaborateurs.",
+      "logo": "Logo",
+      "logoHint": "Carré, 2 Mo au maximum.",
+      "banner": "Bannière",
+      "bannerHint": "Format panoramique, 2 Mo au maximum.",
+      "actions": {
+        "pay": "Paiement immédiat",
+        "reserve": "Réservation sans paiement",
+        "both": "Paiement ou réservation"
+      }
+    },
+    "actions": {
+      "invalidFields": "Certains champs sont invalides.",
+      "duplicateName": "Une entreprise porte déjà ce nom.",
+      "forbidden": "Vous n'êtes pas autorisé à modifier cette entreprise.",
+      "failed": "La mise à jour a échoué.",
+      "updated": "Entreprise mise à jour."
+    }
+  },
+  "journeys": {
+    "title": "Trajets",
+    "subtitle": "Départs programmés par les agences de {company}.",
+    "tableCaption": "Trajets de l'entreprise",
+    "itemLabel": "trajets",
+    "columns": {
+      "route": "Itinéraire",
+      "departure": "Départ",
+      "seat": "Agence",
+      "amount": "Prix",
+      "tags": "Caractéristiques"
+    },
+    "unknownPlace": "Lieu inconnu",
+    "noStation": "Gares non renseignées",
+    "noSeat": "Agence inconnue",
+    "places": "Places : {count}",
+    "vip": "VIP",
+    "daily": "Quotidien",
+    "hidden": "Masqué",
+    "empty": {
+      "title": "Aucun trajet programmé",
+      "description": "Les trajets sont créés par les chefs d'agence depuis leur propre espace.",
+      "filteredTitle": "Aucun trajet pour ces filtres",
+      "filteredDescription": "Élargissez la recherche ou réinitialisez les filtres."
+    },
+    "filters": {
+      "seat": "Agence",
+      "allSeats": "Toutes les agences",
+      "visibility": "Visibilité",
+      "allVisibilities": "Toutes",
+      "visible": "Visibles",
+      "hidden": "Masqués",
+      "class": "Classe",
+      "allClasses": "Toutes",
+      "vip": "VIP",
+      "standard": "Standard"
+    }
+  },
+  "tickets": {
+    "title": "Billets",
+    "subtitle": "Billets vendus par les agences de {company}.",
+    "tableCaption": "Billets de l'entreprise",
+    "itemLabel": "billets",
+    "columns": {
+      "buyer": "Acheteur",
+      "route": "Itinéraire",
+      "seat": "Agence",
+      "amount": "Montant payé",
+      "status": "État"
+    },
+    "unknownBuyer": "Acheteur inconnu",
+    "places": "Places : {count}",
+    "paid": "Payé",
+    "unpaid": "En attente",
+    "reservation": "Réservation",
+    "validated": "Validés : {count}",
+    "empty": {
+      "title": "Aucun billet vendu",
+      "description": "Les billets apparaissent dès la première vente d'une agence.",
+      "filteredTitle": "Aucun billet pour ces filtres",
+      "filteredDescription": "Élargissez la recherche ou réinitialisez les filtres."
+    },
+    "filters": {
+      "searchLabel": "Rechercher un billet",
+      "searchPlaceholder": "Nom, téléphone, gare…",
+      "seat": "Agence",
+      "allSeats": "Toutes les agences",
+      "payment": "Paiement",
+      "allPayments": "Tous",
+      "kind": "Type",
+      "allKinds": "Tous",
+      "purchase": "Achat"
+    }
+  },
+  "incidents": {
+    "title": "Incidents",
+    "subtitle": "Signalements et excès de vitesse concernant {company}.",
+    "tabsLabel": "Type d'incident",
+    "itemLabel": "signalements",
+    "tabs": {
+      "reports": "Signalements",
+      "speeding": "Excès de vitesse"
+    },
+    "open": "À traiter",
+    "resolved": "Traité",
+    "resolve": "Traiter",
+    "reopen": "Rouvrir",
+    "anonymous": "Signalement anonyme",
+    "unknownSeat": "Agence inconnue",
+    "imageCount": "Photos : {count}",
+    "resolutionNote": "Traitement : {note}",
+    "empty": {
+      "title": "Aucun signalement",
+      "description": "Les voyageurs n'ont signalé aucun problème sur vos agences.",
+      "filteredTitle": "Aucun signalement pour ces filtres",
+      "filteredDescription": "Élargissez la recherche ou réinitialisez les filtres."
+    },
+    "filters": {
+      "searchLabel": "Rechercher un signalement",
+      "searchPlaceholder": "Mot-clé du signalement…",
+      "status": "État",
+      "allStatuses": "Tous",
+      "seat": "Agence",
+      "allSeats": "Toutes les agences"
+    },
+    "resolveDialog": {
+      "title": "Clore ce signalement",
+      "description": "Le signalement restera consultable, marqué comme traité.",
+      "note": "Note de traitement",
+      "noteHint": "Facultative, mais c'est elle qui expliquera la décision dans six mois.",
+      "action": "Marquer comme traité"
+    },
+    "actions": {
+      "invalidFields": "Certains champs sont invalides.",
+      "forbidden": "Ce signalement ne concerne pas votre entreprise.",
+      "resolved": "Signalement marqué comme traité.",
+      "reopened": "Signalement rouvert."
+    },
+    "speeding": {
+      "tableCaption": "Excès de vitesse relevés",
+      "itemLabel": "relevés",
+      "speedValue": "{speed} km/h",
+      "over": "Excès",
+      "unknownStreet": "Voie non renseignée",
+      "coordinates": "{lat}, {long}",
+      "anonymous": "Relevé automatique",
+      "columns": {
+        "speed": "Vitesse",
+        "location": "Localisation",
+        "date": "Date",
+        "reporter": "Signalé par"
+      },
+      "empty": {
+        "title": "Aucun excès relevé",
+        "description": "L'application mobile n'a remonté aucun dépassement sur vos véhicules.",
+        "filteredTitle": "Aucun relevé pour cette recherche",
+        "filteredDescription": "Essayez un autre nom de voie."
+      },
+      "filters": {
+        "searchPlaceholder": "Nom de la voie…"
+      }
+    }
+  },
+  "opinions": {
+    "title": "Avis clients",
+    "subtitle": "Ce que les voyageurs disent de {company}.",
+    "itemLabel": "avis",
+    "anonymous": "Voyageur",
+    "noComment": "Note laissée sans commentaire.",
+    "ratingLabel": "{rating} sur 5",
+    "empty": {
+      "title": "Aucun avis",
+      "description": "Les voyageurs n'ont pas encore noté vos trajets.",
+      "filteredTitle": "Aucun avis pour ces filtres",
+      "filteredDescription": "Élargissez la recherche ou réinitialisez les filtres."
+    },
+    "filters": {
+      "searchLabel": "Rechercher un avis",
+      "searchPlaceholder": "Mot-clé du commentaire…",
+      "rating": "Note",
+      "allRatings": "Toutes",
+      "positive": "Positifs (4–5)",
+      "neutral": "Neutres (3–4)",
+      "negative": "Négatifs (0–2)"
+    }
+  },
+  "settings": {
+    "title": "Paramètres",
+    "subtitle": "Vos informations personnelles, votre sécurité et vos préférences d'affichage.",
+    "profile": {
+      "title": "Profil",
+      "description": "Ces informations vous identifient auprès de vos équipes et de Travelas.",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "userName": "Nom d'utilisateur",
+      "userNameHint": "Permet de vous connecter, en plus de votre adresse e-mail.",
+      "phoneNumber": "Téléphone",
+      "phoneNumberHint": "Format international, indicatif compris."
+    },
+    "avatar": {
+      "hint": "JPEG ou PNG, 2 Mo maximum. L'image est recadrée en carré.",
+      "add": "Ajouter une photo",
+      "replace": "Changer la photo",
+      "remove": "Supprimer la photo",
+      "cropTitle": "Recadrer la photo de profil"
+    },
+    "email": {
+      "title": "Adresse e-mail",
+      "cardDescription": "Elle sert à vous connecter et à récupérer votre mot de passe.",
+      "description": "L'adresse actuelle reste active tant que la nouvelle n'a pas été confirmée par le code envoyé.",
+      "verified": "Vérifiée",
+      "unverified": "Non vérifiée",
+      "newEmail": "Nouvelle adresse",
+      "currentPassword": "Mot de passe actuel",
+      "currentPasswordHint": "Demandé pour confirmer que la demande vient bien de vous.",
+      "submit": "Envoyer le code",
+      "pendingNotice": "Un code à six chiffres a été envoyé à <strong>{email}</strong>. Il est valable 5 minutes.",
+      "codeLabel": "Code de vérification",
+      "codeHint": "Saisissez le code reçu sur la nouvelle adresse.",
+      "confirm": "Confirmer l'adresse",
+      "cancelChange": "Annuler le changement"
+    },
+    "password": {
+      "title": "Mot de passe",
+      "description": "Le mot de passe actuel est demandé : votre session ouverte ne suffit pas à le changer.",
+      "current": "Mot de passe actuel",
+      "new": "Nouveau mot de passe",
+      "confirm": "Confirmer le nouveau mot de passe",
+      "submit": "Changer le mot de passe"
+    },
+    "preferences": {
+      "title": "Préférences",
+      "description": "Langue et thème de l'interface.",
+      "language": "Langue",
+      "languageHint": "Utilisée par ce tableau de bord, ainsi que par les e-mails et notifications Travelas.",
+      "themeHint": "« Système » suit le réglage de votre appareil."
+    },
+    "access": {
+      "title": "Accès",
+      "description": "Attribué par la plateforme. Ces informations ne se modifient pas ici.",
+      "role": "Rôle",
+      "company": "Entreprise",
+      "companyActive": "Active",
+      "companyPending": "En attente de validation",
+      "unnamedCompany": "Sans nom",
+      "noCompany": "Aucune entreprise",
+      "seat": "Agence de rattachement",
+      "noSeat": "Aucune",
+      "userName": "Nom d'utilisateur"
+    },
+    "actions": {
+      "invalidFields": "Vérifiez les champs signalés.",
+      "profileUpdated": "Profil mis à jour.",
+      "profileFailed": "Le profil n'a pas pu être mis à jour.",
+      "duplicateEmail": "Cette adresse e-mail est déjà utilisée.",
+      "duplicatePhone": "Ce numéro de téléphone est déjà utilisé.",
+      "duplicateUsername": "Ce nom d'utilisateur est déjà pris.",
+      "imageType": "Format non pris en charge. Choisissez un JPEG ou un PNG.",
+      "imageTooLarge": "Image trop lourde. 2 Mo au maximum.",
+      "imageRequired": "Choisissez une image.",
+      "avatarUpdated": "Photo de profil mise à jour.",
+      "avatarRemoved": "Photo de profil supprimée.",
+      "avatarFailed": "La photo n'a pas pu être enregistrée.",
+      "passwordUpdated": "Mot de passe modifié.",
+      "passwordFailed": "Le mot de passe n'a pas pu être modifié.",
+      "emailRequested": "Code envoyé à la nouvelle adresse.",
+      "emailRequestFailed": "La demande n'a pas pu être envoyée.",
+      "emailChanged": "Adresse e-mail modifiée.",
+      "emailConfirmFailed": "L'adresse n'a pas pu être confirmée.",
+      "emailCancelled": "Changement d'adresse annulé.",
+      "emailCancelFailed": "Le changement n'a pas pu être annulé.",
+      "codeInvalid": "Code incorrect.",
+      "codeExpired": "Code expiré. Relancez la demande.",
+      "noPendingEmail": "Aucun changement d'adresse en cours.",
+      "langUpdated": "Langue enregistrée.",
+      "langFailed": "La langue n'a pas pu être enregistrée sur votre compte."
+    }
+  }
+}

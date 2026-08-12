@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+/**
+ * Variante `dark:` — trois états, pas deux.
+ *
+ * `<html>` porte `.light` ou `.dark` quand l'utilisateur a choisi, et *aucune
+ * classe* quand il reste sur « Système ». Les utilitaires `dark:` doivent donc
+ * s'activer dans deux cas : classe explicite, ou absence de classe combinée à
+ * une préférence système sombre. Le déclaratif par défaut de Tailwind v4
+ * (`prefers-color-scheme` seul) ignorerait le choix explicite.
+ */
+@custom-variant dark {
+  &:where(.dark, .dark *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:where(:root:not(.light), :root:not(.light) *) {
+      @slot;
+    }
+  }
+}
+
+/**
+ * Jetons de design du dashboard entreprise.
+ *
+ * La palette est celle de la suite Travelas, partagée avec le dashboard
+ * super-admin : orange `#FF7122` (brand-500) et bleu nuit `#0A0B2E`
+ * (secondary). Les couleurs sont définies une seule fois ici, puis consommées
+ * via les utilitaires Tailwind générés (`bg-surface`, `text-muted`,
+ * `border-subtle`, `text-brand-600`…). Ne jamais coder une couleur en dur
+ * dans un composant.
+ */
+@theme {
+  --color-brand-50: #fff3eb;
+  --color-brand-100: #ffe4d6;
+  --color-brand-200: #ffc7ad;
+  --color-brand-300: #ffa37a;
+  --color-brand-400: #ff854d;
+  /* Couleur primaire de la marque Travelas. */
+  --color-brand-500: #ff7122;
+  --color-brand-600: #ef5406;
+  --color-brand-700: #c34409;
+  --color-brand-800: #9c370d;
+  --color-brand-900: #812d0e;
+
+  /* Bleu nuit Travelas — utilisé pour les surfaces sombres et les accents. */
+  --color-secondary-50: #eeeef5;
+  --color-secondary-100: #d3d4e4;
+  --color-secondary-200: #a5a7c6;
+  --color-secondary-300: #6f72a0;
+  --color-secondary-400: #454877;
+  --color-secondary-500: #2a2d59;
+  --color-secondary-600: #1c1e44;
+  --color-secondary-700: #131538;
+  --color-secondary-800: #0d0f31;
+  --color-secondary-900: #0a0b2e;
+
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-danger: #dc2626;
+
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+}
+
+/**
+ * Jetons dépendants du thème.
+ *
+ * `light-dark()` les déclare une seule fois : c'est `color-scheme` qui choisit
+ * la branche. Le thème est ainsi rendu correctement dès le HTML servi, sans
+ * script inline — ce qui compte ici, car la CSP est à nonce et un script de
+ * pré-hydratation devrait le récupérer via `headers()`. Bénéfice annexe :
+ * `color-scheme` habille aussi les éléments natifs (champs, listes déroulantes,
+ * barres de défilement), qu'aucune classe CSS ne peut atteindre.
+ *
+ * **Le thème sombre n'est pas le bleu nuit de la marque.** `secondary-900`
+ * (#0a0b2e) est une couleur d'accent, très saturée en bleu-violet : étalée sur
+ * la totalité d'un écran d'administration consulté des heures durant, elle
+ * fatigue l'œil et fait vibrer le texte. Les surfaces sombres sont donc des
+ * gris quasi noirs, à peine bleutés (teinte conservée, saturation divisée par
+ * dix) — la parenté visuelle avec la charte demeure, l'agressivité disparaît.
+ * L'identité, elle, reste portée par l'orange `brand-500`.
+ */
+:root {
+  /* Aucune classe = « Système » : la préférence du navigateur tranche. */
+  color-scheme: light dark;
+
+  --background: light-dark(#f7f6f5, #0b0c11);
+  --foreground: light-dark(#0a0b2e, #e9e9ef);
+  /* La surface est plus claire que le fond : c'est ce contraste — et non une
+     ombre portée, invisible sur fond noir — qui détache les cartes. */
+  --surface: light-dark(#ffffff, #14151c);
+  --muted: light-dark(#6b6a7d, #9b9ba9);
+  --subtle: light-dark(#e6e4e9, #262832);
+
+  /**
+   * Séries de graphiques.
+   *
+   * Trois emplacements attribués dans un ordre FIXE, jamais recyclé : la
+   * couleur suit la grandeur mesurée (recette, frais, passagers), pas son rang
+   * dans un classement. Un filtre qui change le nombre de séries ne doit pas
+   * repeindre les survivantes.
+   *
+   * Les valeurs ne sont pas choisies à l'œil. Elles sont vérifiées par le
+   * validateur de la compétence « dataviz » sur les deux surfaces réelles de
+   * l'application (#ffffff en clair, #14151c en sombre) : bande de clarté
+   * OKLCH, plancher de chroma, séparation sous daltonisme (ΔE ≥ 8) et
+   * contraste ≥ 3:1. `--chart-1` est le `brand-600` de la charte, qui passe
+   * les deux modes sans variante — le `brand-500` de la marque, lui, est trop
+   * clair pour la bande sombre (L 0,71 pour un plafond à 0,67).
+   *
+   * ⚠️ `--chart-3` tombe à 2,8:1 sur fond clair : tout graphique qui l'emploie
+   * doit porter une étiquette lisible ou un tableau de repli — la couleur seule
+   * n'y suffit pas.
+   */
+  --chart-1: #ef5406;
+  --chart-2: light-dark(#2a78d6, #3987e5);
+  --chart-3: light-dark(#1baf7a, #199e70);
+}
+
+/* Choix explicite de l'utilisateur, posé par le serveur d'après son cookie. */
+:root.light {
+  color-scheme: light;
+}
+
+:root.dark {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Rend les cibles de focus clairement visibles (accessibilité clavier). */
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+}
