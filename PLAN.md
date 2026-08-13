@@ -500,9 +500,17 @@ node scripts/test-cloisonnement-entreprises.js
 ```
 
 Le script monte deux entreprises concurrentes de bout en bout et exécute
-**21 contrôles**. Il a été passé sur le code *avant* correctif comme contrôle
-négatif : **10 des 21 échouaient**, confirmant que chaque faille listée était
-réellement exploitable.
+**26 contrôles**. Il a été passé sur le code *avant* correctif comme contrôle
+négatif : **10 des 21 contrôles d'origine échouaient**, confirmant que chaque
+faille listée était réellement exploitable.
+
+Les cinq derniers (« Point 4 ») couvrent les trajets :
+`PATCH /company-journey/:id` est ouverte aux chefs d'agence et ne vérifiait que
+le rôle — un identifiant de trajet suffisait à modifier le tarif ou la date du
+trajet de n'importe quelle entreprise. Le service appelle désormais
+`assertSameSeat()`, et le changement de siège d'un trajet est réservé à
+`PATCH /company-journey/admin/:id` (`super_admin`), seule route dont le DTO
+porte `seatId`.
 
 ### Escalade de privilèges
 

@@ -1,0 +1,78 @@
+name: Build & Deploy TEST
+
+# Déclenché par un tag `test-v*` (ex: `git tag test-v1.0.0 && git push --tags`),
+# comme les dépôts `travelas-backend` et `travelas-super-admin`.
+on:
+  push:
+    tags:
+      - 'test-v*'
+
+env:
+  IMAGE: ramirokaffo/travelas-company-admin
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Login Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Setup Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # Les `build-args` ne sont PAS des secrets : ce sont les URLs publiques de
+      # l'environnement de test, figées dans le bundle navigateur par Next
+      # (`NEXT_PUBLIC_*` et l'`API_URL` lue par `src/proxy.ts`). Elles se
+      # surchargent dans Settings → Secrets and variables → Actions → Variables.
+      - name: Build and Push Image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          # Une image par environnement : ces valeurs sont dans le bundle.
+          build-args: |
+            API_URL=${{ vars.TEST_API_URL || 'https://api-test.travelas.app' }}
+            NEXT_PUBLIC_APP_URL=${{ vars.TEST_APP_URL || 'https://entreprise-test.travelas.app' }}
+            NEXT_PUBLIC_APP_NAME=${{ vars.TEST_APP_NAME || 'Travelas Entreprise' }}
+            NEXT_PUBLIC_SOCKET_URL=${{ vars.TEST_SOCKET_URL || 'https://api-test.travelas.app' }}
+          tags: |
+            ${{ env.IMAGE }}:test-latest
+            ${{ env.IMAGE }}:${{ github.ref_name }}
+          # Cache partagé entre exécutions : `npm ci` et les couches Next ne sont
+          # rejoués que si `package-lock.json` ou les sources changent.
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to TEST
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          passphrase: ${{ secrets.VPS_SSH_PASSPHRASE }}
+
+          # Le compose global (`~/travelas/docker-compose.yml`) vient du dépôt
+          # `travelas-backend`. Ce dépôt-ci ne touche QUE son propre service :
+          # `--no-deps` évite de redémarrer MySQL, Redis et l'API au passage.
+          script: |
+            set -e
+            cd ~/travelas
+
+            docker compose pull company-admin
+            docker compose up -d --no-deps company-admin
+
+            # Les images précédentes ne sont plus référencées : on récupère
+            # le disque du VPS, qui sature vite avec trois applications.
+            docker image prune -f

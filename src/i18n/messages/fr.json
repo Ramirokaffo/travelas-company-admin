@@ -15,6 +15,7 @@
     "tickets": "Billets",
     "incidents": "Incidents",
     "opinions": "Avis clients",
+    "notifications": "Notifications",
     "settings": "Paramètres"
   },
   "common": {
@@ -88,6 +89,7 @@
       "tickets": "Billets",
       "incidents": "Incidents",
       "opinions": "Avis clients",
+      "notifications": "Notifications",
       "settings": "Paramètres"
     }
   },
@@ -945,6 +947,65 @@
       "positive": "Positifs (4–5)",
       "neutral": "Neutres (3–4)",
       "negative": "Négatifs (0–2)"
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "subtitle": "Messages de la plateforme Travelas. Non lues : {count}.",
+    "itemLabel": "notifications",
+    "unreadBadge": "Non lue",
+    "markRead": "Marquer comme lue",
+    "markAllRead": "Tout marquer comme lu",
+    "delete": "Supprimer",
+    "types": {
+      "notification": "Information",
+      "wallet": "Portefeuille",
+      "ticket": "Billet",
+      "referral": "Parrainage"
+    },
+    "filters": {
+      "searchLabel": "Rechercher une notification",
+      "searchPlaceholder": "Titre de la notification",
+      "status": "État",
+      "allStatuses": "Toutes",
+      "unread": "Non lues",
+      "type": "Type",
+      "allTypes": "Tous les types"
+    },
+    "empty": {
+      "title": "Aucune notification",
+      "description": "Les messages de la plateforme et les alertes de votre entreprise apparaîtront ici.",
+      "filteredTitle": "Aucune notification ne correspond",
+      "filteredDescription": "Modifiez la recherche ou réinitialisez les filtres."
+    },
+    "bell": {
+      "label": "Notifications",
+      "labelWithCount": "Notifications, {count} non lues",
+      "panelLabel": "Dernières notifications",
+      "title": "Notifications",
+      "loading": "Chargement…",
+      "empty": "Aucune notification pour le moment.",
+      "seeAll": "Tout afficher"
+    },
+    "toast": {
+      "received": "Nouvelle notification reçue."
+    },
+    "rowActions": {
+      "markRead": "Marquer « {title} » comme lue",
+      "delete": "Supprimer « {title} »"
+    },
+    "confirmDelete": {
+      "title": "Supprimer cette notification ?",
+      "description": "« {title} » sera retirée de votre boîte. Cette action est irréversible.",
+      "action": "Supprimer"
+    },
+    "actions": {
+      "marked": "Notification marquée comme lue.",
+      "allMarked": "Toutes les notifications ont été marquées comme lues.",
+      "deleted": "Notification supprimée.",
+      "invalidRequest": "Requête invalide.",
+      "forbidden": "Cette notification appartient à un autre compte.",
+      "notFound": "Cette notification n'existe plus."
     }
   },
   "settings": {

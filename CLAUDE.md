@@ -398,7 +398,7 @@ s'exécuterait avant l'authentification et refuserait tout en 403.
 Après toute modification touchant aux rôles ou au périmètre des données :
 
 ```bash
-node scripts/test-cloisonnement-entreprises.js   # 21 contrôles, backend démarré
+node scripts/test-cloisonnement-entreprises.js   # 26 contrôles, backend démarré
 ```
 
 Après toute modification touchant à l'adresse e-mail d'un compte :
@@ -455,6 +455,25 @@ C'est autorisé et souvent nécessaire. Dans ce cas :
    `@SkipAuth()` pour ouvrir une route — avec prudence.
 3. Toujours cadrer les données sur `user.company.id` pour un `company_admin`.
 4. Mettre à jour les schémas Zod correspondants dans `src/types/` de ce dépôt.
+
+## Déploiement
+
+Détail dans [DEPLOYMENT.md](DEPLOYMENT.md) ; la pile complète (API,
+super-admin, ce dashboard, MySQL, Redis, Caddy) tient dans un seul compose,
+`deploy/docker-compose.yml` du dépôt `travelas-backend`.
+
+Le seul point qui touche au **code** de ce dépôt : Next inline au build tout
+`NEXT_PUBLIC_*` **et** le `process.env.API_URL` lu par `src/proxy.ts` (le
+runtime du proxy n'a accès qu'aux valeurs figées au build — c'est de là que
+sort l'origine `img-src` de la CSP). Ces valeurs vivent donc dans l'image, pas
+dans l'environnement du conteneur : ajouter une variable publique, c'est
+ajouter un `ARG` au Dockerfile, un `--build-arg` à `scripts/release.sh` et une
+entrée aux `build-args` du workflow. Une variable serveur ordinaire (`API_URL`
+côté `lib/api/server-api.ts`, `API_TIMEOUT_MS`) reste, elle, du pur runtime.
+
+`/api/health` est exclue du `matcher` de `src/proxy.ts` : c'est la sonde de
+Docker et du reverse proxy, et le contrôle *fail-closed* la renverrait sinon
+vers `/login`.
 
 ## Avant de livrer
 

@@ -26,6 +26,10 @@ export class ApiError extends Error {
   get isForbidden(): boolean {
     return this.status === 403;
   }
+
+  get isNotFound(): boolean {
+    return this.status === 404;
+  }
 }
 
 /** Corps d'erreur standard de NestJS (`HttpException`). */

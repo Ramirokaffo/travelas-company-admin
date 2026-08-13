@@ -15,6 +15,7 @@
     "tickets": "Tickets",
     "incidents": "Incidents",
     "opinions": "Customer reviews",
+    "notifications": "Notifications",
     "settings": "Settings"
   },
   "common": {
@@ -88,6 +89,7 @@
       "tickets": "Tickets",
       "incidents": "Incidents",
       "opinions": "Customer reviews",
+      "notifications": "Notifications",
       "settings": "Settings"
     }
   },
@@ -945,6 +947,65 @@
       "positive": "Positive (4–5)",
       "neutral": "Neutral (3–4)",
       "negative": "Negative (0–2)"
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "subtitle": "Messages from the Travelas platform. Unread: {count}.",
+    "itemLabel": "notifications",
+    "unreadBadge": "Unread",
+    "markRead": "Mark as read",
+    "markAllRead": "Mark all as read",
+    "delete": "Delete",
+    "types": {
+      "notification": "Information",
+      "wallet": "Wallet",
+      "ticket": "Ticket",
+      "referral": "Referral"
+    },
+    "filters": {
+      "searchLabel": "Search a notification",
+      "searchPlaceholder": "Notification title",
+      "status": "Status",
+      "allStatuses": "All",
+      "unread": "Unread",
+      "type": "Type",
+      "allTypes": "All types"
+    },
+    "empty": {
+      "title": "No notification",
+      "description": "Platform messages and alerts about your company will appear here.",
+      "filteredTitle": "No matching notification",
+      "filteredDescription": "Change the search or reset the filters."
+    },
+    "bell": {
+      "label": "Notifications",
+      "labelWithCount": "Notifications, {count} unread",
+      "panelLabel": "Latest notifications",
+      "title": "Notifications",
+      "loading": "Loading…",
+      "empty": "No notification yet.",
+      "seeAll": "View all"
+    },
+    "toast": {
+      "received": "New notification received."
+    },
+    "rowActions": {
+      "markRead": "Mark “{title}” as read",
+      "delete": "Delete “{title}”"
+    },
+    "confirmDelete": {
+      "title": "Delete this notification?",
+      "description": "“{title}” will be removed from your inbox. This action cannot be undone.",
+      "action": "Delete"
+    },
+    "actions": {
+      "marked": "Notification marked as read.",
+      "allMarked": "All notifications have been marked as read.",
+      "deleted": "Notification deleted.",
+      "invalidRequest": "Invalid request.",
+      "forbidden": "This notification belongs to another account.",
+      "notFound": "This notification no longer exists."
     }
   },
   "settings": {

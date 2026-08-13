@@ -6,7 +6,8 @@ import { CompanyInactiveBanner } from "@/components/layout/company-inactive-bann
 import { Sidebar } from "@/components/layout/sidebar";
 import { Topbar } from "@/components/layout/topbar";
 import { BrandLogo } from "@/components/ui/brand-logo";
-import { requireSession } from "@/lib/auth/session";
+import { countUnreadNotifications } from "@/features/notifications/api";
+import { getAuthorizedToken, requireSession } from "@/lib/auth/session";
 import { SIDEBAR_COOKIE, parseSidebarState } from "@/lib/layout/sidebar-state";
 
 /**
@@ -25,6 +26,12 @@ export default async function DashboardLayout({ children }: { children: ReactNod
   const t = await getTranslations();
   const sidebarState = parseSidebarState((await cookies()).get(SIDEBAR_COOKIE)?.value);
 
+  // La pastille est un agrément : un module `notification` indisponible ne doit
+  // pas faire tomber toutes les pages du dashboard, qui partagent ce layout.
+  const unreadNotifications = await countUnreadNotifications(
+    await getAuthorizedToken(),
+  ).catch(() => 0);
+
   return (
     <div className="flex min-h-dvh">
       <Sidebar
@@ -33,7 +40,7 @@ export default async function DashboardLayout({ children }: { children: ReactNod
         initialState={sidebarState}
       />
       <div className="flex min-w-0 flex-1 flex-col">
-        <Topbar user={session} />
+        <Topbar user={session} unreadNotifications={unreadNotifications} />
 
         {/* Rappel permanent : sans activation, les trajets créés ici
             n'apparaissent pas dans l'application mobile des voyageurs. */}

@@ -42,3 +42,9 @@ requête, et toutes les mutations vérifient l'origine de la requête.
 
 Les règles détaillées sont dans [CLAUDE.md](CLAUDE.md) ; la feuille de route et
 les correctifs backend requis dans [PLAN.md](PLAN.md).
+
+## Déploiement
+
+Image Docker `ramirokaffo/travelas-company-admin`, publiée par tag Git
+`test-v*`. Voir [DEPLOYMENT.md](DEPLOYMENT.md) — et le `deploy/README.md` du
+dépôt `travelas-backend` pour la pile complète, décrite par un seul compose.

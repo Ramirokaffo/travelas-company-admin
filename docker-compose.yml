@@ -1,0 +1,39 @@
+# ---------------------------------------------------------------------------
+# Déploiement AUTONOME du dashboard entreprise.
+#
+# Ce fichier ne sert qu'à faire tourner ce dashboard seul, contre une API déjà
+# déployée ailleurs (ou pour vérifier l'image en local avant publication).
+#
+# Le déploiement complet de la plateforme (MySQL, Redis, API, super-admin,
+# company-admin, Caddy) est décrit par UN SEUL compose, dans le dépôt
+# `travelas-backend` : `deploy/docker-compose.yml`.
+#
+# Démarrage :
+#   cp .env.docker .env
+#   $EDITOR .env
+#   docker compose pull && docker compose up -d
+# ---------------------------------------------------------------------------
+
+services:
+  company-admin:
+    image: ramirokaffo/travelas-company-admin:${COMPANY_ADMIN_TAG:-latest}
+    pull_policy: always
+    container_name: travelas-company-admin
+    restart: unless-stopped
+    ports:
+      - "${COMPANY_ADMIN_PORT:-3000}:3000"
+    environment:
+      NODE_ENV: production
+      # URL de l'API vue depuis le CONTENEUR (jamais depuis le navigateur).
+      # Sur le compose global, c'est l'adresse interne `http://api:3001`.
+      API_URL: ${API_URL:?API_URL est obligatoire}
+      API_TIMEOUT_MS: ${API_TIMEOUT_MS:-15000}
+      # Derrière un reverse proxy HTTPS, les cookies doivent porter `Secure`
+      # même si Next voit une requête HTTP en interne.
+      FORCE_SECURE_COOKIES: ${FORCE_SECURE_COOKIES:-1}
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:3000/api/health"]
+      interval: 30s
+      timeout: 5s
+      start_period: 20s
+      retries: 3

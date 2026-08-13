@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 import { ROUTES, isPublicRoute } from "@/constants/routes";
-import { buildContentSecurityPolicy, mediaOrigin } from "@/lib/security/csp";
+import { buildContentSecurityPolicy, mediaOrigin, socketOrigins } from "@/lib/security/csp";
 
 /**
  * Proxy (ex-`middleware`, renommé dans Next 16) — première ligne de défense.
@@ -30,6 +30,14 @@ const ACCESS_TOKEN_COOKIE = "travelas_at";
  */
 const MEDIA_ORIGIN = mediaOrigin(process.env.API_URL);
 
+/**
+ * Origines du point d'entrée temps réel, pour `connect-src`.
+ *
+ * `NEXT_PUBLIC_SOCKET_URL` est écrit littéralement : c'est ce qui permet à
+ * Next de l'inliner au build, seul moyen d'y accéder depuis le runtime du proxy.
+ */
+const SOCKET_ORIGINS = socketOrigins(process.env.NEXT_PUBLIC_SOCKET_URL);
+
 /** Génère un nonce CSP (128 bits, base64) avec la Web Crypto API. */
 function generateNonce(): string {
   const bytes = new Uint8Array(16);
@@ -42,7 +50,12 @@ export default function proxy(request: NextRequest) {
 
   const nonce = generateNonce();
   const isDev = process.env.NODE_ENV !== "production";
-  const csp = buildContentSecurityPolicy({ nonce, isDev, mediaOrigin: MEDIA_ORIGIN });
+  const csp = buildContentSecurityPolicy({
+    nonce,
+    isDev,
+    mediaOrigin: MEDIA_ORIGIN,
+    socketOrigins: SOCKET_ORIGINS,
+  });
 
   // Le nonce est transmis au rendu via un en-tête de requête, lu par le layout.
   const requestHeaders = new Headers(request.headers);
@@ -93,11 +106,13 @@ export const config = {
     /*
      * Toutes les routes sauf :
      * - /api/auth/*  (connexion, déconnexion : gérées par leurs handlers)
+     * - /api/health  (sonde de Docker et du reverse proxy : sans session, elle
+     *   serait redirigée vers /login et le conteneur resterait `unhealthy`)
      * - les assets statiques et fichiers d'image
      */
     {
       source:
-        "/((?!api/auth|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico)$).*)",
+        "/((?!api/auth|api/health|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico)$).*)",
       missing: [
         { type: "header", key: "next-router-prefetch" },
         { type: "header", key: "purpose", value: "prefetch" },

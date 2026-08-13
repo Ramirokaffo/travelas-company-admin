@@ -1,0 +1,45 @@
+# Contexte de build : tout ce qui n'est pas nécessaire à `next build`.
+#
+# `test/` n'y figure PAS volontairement : les tests colocalisés dans `src/`
+# importent `@test/intl`, et la vérification de types de `next build` échouerait
+# sans ce dossier.
+
+# Dépendances et sorties de build (reconstruites dans l'image)
+node_modules
+.next
+out
+build
+coverage
+*.tsbuildinfo
+
+# Secrets — ne doivent jamais entrer dans une couche d'image
+.env
+.env.*
+!.env.example
+
+# Git & CI
+.git
+.gitignore
+.github
+
+# Éditeurs / OS
+.vscode
+.idea
+*.code-workspace
+.DS_Store
+Thumbs.db
+*.swp
+
+# Documentation et outillage inutiles au build
+*.md
+!README.md
+.prettierrc.json
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# Journaux
+*.log
+npm-debug.log*

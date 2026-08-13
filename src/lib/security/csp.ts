@@ -29,15 +29,41 @@ export function mediaOrigin(apiUrl: string | undefined): string | null {
   }
 }
 
+/**
+ * Origines à autoriser dans `connect-src` pour la WebSocket temps réel.
+ *
+ * Le handshake socket.io part en HTTP puis bascule en `ws:` / `wss:` — et les
+ * deux schémas doivent figurer dans la politique : un navigateur n'assimile pas
+ * `wss://api.example.com` à `https://api.example.com`. On renvoie donc l'origine
+ * HTTP **et** son équivalent WebSocket.
+ *
+ * Sans cela, la connexion échoue silencieusement en production (la CSP bloque
+ * avant toute requête réseau) alors qu'elle passe en développement, où `ws:` est
+ * déjà ouvert pour le Fast Refresh de Next.
+ */
+export function socketOrigins(socketUrl: string | undefined): string[] {
+  if (!socketUrl) return [];
+  try {
+    const { origin, protocol, host } = new URL(socketUrl);
+    const wsScheme = protocol === "https:" ? "wss:" : "ws:";
+    return [origin, `${wsScheme}//${host}`];
+  } catch {
+    return [];
+  }
+}
+
 export function buildContentSecurityPolicy({
   nonce,
   isDev,
   mediaOrigin: media,
+  socketOrigins: sockets = [],
 }: {
   nonce: string;
   isDev: boolean;
   /** Origine du backend, d'où proviennent les fichiers téléversés. */
   mediaOrigin?: string | null;
+  /** Origines du point d'entrée temps réel (`socketOrigins()`). */
+  socketOrigins?: readonly string[];
 }): string {
   const scriptSrc = [
     "'self'",
@@ -66,7 +92,13 @@ export function buildContentSecurityPolicy({
     "font-src": ["'self'", "data:"],
     // Le navigateur ne parle qu'à ce dashboard : l'API NestJS n'est jamais
     // appelée directement depuis le client (pattern BFF).
-    "connect-src": ["'self'", ...(isDev ? ["ws:", "wss:"] : [])],
+    //
+    // SEULE exception, et elle est étroite : la WebSocket des notifications.
+    // Une WebSocket ne se relaie pas à travers un route handler Next. Seul le
+    // point d'entrée socket est ouvert — aucune route REST de l'API n'est
+    // joignable depuis le navigateur pour autant, et le handshake exige un
+    // ticket délivré côté serveur.
+    "connect-src": ["'self'", ...sockets, ...(isDev ? ["ws:", "wss:"] : [])],
     "frame-ancestors": ["'none'"],
     "form-action": ["'self'"],
     "base-uri": ["'self'"],

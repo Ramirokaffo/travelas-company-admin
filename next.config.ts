@@ -31,6 +31,11 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   reactStrictMode: true,
 
+  // Sortie autonome : `next build` produit un `server.js` et n'emporte que les
+  // modules réellement atteints par le graphe de dépendances. C'est ce qui
+  // permet à l'image Docker de se passer entièrement de `node_modules`.
+  output: "standalone",
+
   // Ancre la racine Turbopack sur ce projet : le dossier parent contient
   // d'autres applications Next et leurs lockfiles.
   turbopack: { root: import.meta.dirname },

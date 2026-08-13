@@ -1,6 +1,7 @@
 import {
   AlertTriangle,
   BarChart3,
+  Bell,
   Building2,
   LayoutDashboard,
   MapPin,
@@ -65,6 +66,9 @@ export const NAV_SECTIONS: NavSection[] = [
   },
   {
     key: "account",
-    items: [{ href: ROUTES.settings, key: "settings", icon: Settings }],
+    items: [
+      { href: ROUTES.notifications, key: "notifications", icon: Bell },
+      { href: ROUTES.settings, key: "settings", icon: Settings },
+    ],
   },
 ];

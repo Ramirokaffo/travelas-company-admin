@@ -19,6 +19,8 @@ export const ROUTES = {
   incidents: "/incidents",
   opinions: "/opinions",
   statistics: "/statistics",
+  /** Centre de notification : boîte de réception du compte connecté. */
+  notifications: "/notifications",
   /** Réglages du compte : profil, adresse e-mail, mot de passe, préférences. */
   settings: "/settings",
 } as const;

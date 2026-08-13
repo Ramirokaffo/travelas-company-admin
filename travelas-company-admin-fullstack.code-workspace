@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../travelas-super-admin"
+		},
+		{
+			"path": "../../Nest-project/travelas-backend"
+		},
+		{
+			"path": "../../../../StudioProjects/travelas-mobile-agence"
+		}
+	],
+	"settings": {}
+}

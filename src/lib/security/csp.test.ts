@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { buildContentSecurityPolicy, mediaOrigin } from "./csp";
+import { buildContentSecurityPolicy, mediaOrigin, socketOrigins } from "./csp";
 
 /**
  * La CSP est une protection silencieuse : quand elle est trop large personne
@@ -58,5 +58,49 @@ describe("buildContentSecurityPolicy", () => {
     expect(directive(csp, "script-src")).toContain("'nonce-abc123'");
     expect(csp).not.toContain("'unsafe-inline'; script");
     expect(directive(csp, "script-src")).not.toContain("'unsafe-eval'");
+  });
+});
+
+describe("socketOrigins", () => {
+  it("ajoute le schéma WebSocket à l'origine HTTP", () => {
+    // Un navigateur n'assimile pas `wss://h` à `https://h` : les deux formes
+    // doivent figurer dans la politique, sinon le handshake passe et la
+    // bascule WebSocket est bloquée.
+    expect(socketOrigins("https://api.travelas.app")).toEqual([
+      "https://api.travelas.app",
+      "wss://api.travelas.app",
+    ]);
+    expect(socketOrigins("http://localhost:3001")).toEqual([
+      "http://localhost:3001",
+      "ws://localhost:3001",
+    ]);
+  });
+
+  it("n'ouvre rien quand le temps réel est désactivé", () => {
+    expect(socketOrigins(undefined)).toEqual([]);
+    expect(socketOrigins("")).toEqual([]);
+    expect(socketOrigins("pas une url")).toEqual([]);
+  });
+});
+
+describe("connect-src et temps réel", () => {
+  const buildWithSocket = (url?: string) =>
+    buildContentSecurityPolicy({
+      nonce: "abc123",
+      isDev: false,
+      mediaOrigin: "http://localhost:3001",
+      socketOrigins: socketOrigins(url),
+    });
+
+  it("ouvre le seul point d'entrée socket, dans les deux schémas", () => {
+    expect(directive(buildWithSocket("http://localhost:3001"), "connect-src")).toBe(
+      "connect-src 'self' http://localhost:3001 ws://localhost:3001",
+    );
+  });
+
+  it("reste fermé quand aucune URL socket n'est configurée", () => {
+    expect(directive(buildWithSocket(undefined), "connect-src")).toBe(
+      "connect-src 'self'",
+    );
   });
 });
