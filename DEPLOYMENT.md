@@ -49,9 +49,9 @@ la pousse en `test-latest` + `test-v1.2.0`, puis met à jour le seul service
 À la main :
 
 ```bash
-NEXT_PUBLIC_APP_URL=https://entreprise-test.travelas.app \
-API_URL=https://api-test.travelas.app \
-NEXT_PUBLIC_SOCKET_URL=https://api-test.travelas.app \
+NEXT_PUBLIC_APP_URL=https://company-admin.ysem.education \
+API_URL=https://api.ysem.education \
+NEXT_PUBLIC_SOCKET_URL=https://api.ysem.education \
 scripts/release.sh 1.2.0
 ```
 

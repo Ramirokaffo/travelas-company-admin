@@ -24,9 +24,9 @@
 #
 # Exemples :
 #   scripts/release.sh 1.0.0
-#   NEXT_PUBLIC_APP_URL=https://entreprise.travelas.app \
-#     API_URL=https://api.travelas.app \
-#     NEXT_PUBLIC_SOCKET_URL=https://api.travelas.app \
+#   NEXT_PUBLIC_APP_URL=https://company-admin.ysem.education \
+#     API_URL=https://api.ysem.education \
+#     NEXT_PUBLIC_SOCKET_URL=https://api.ysem.education \
 #     scripts/release.sh 1.0.0
 #   PUSH_LATEST=0 scripts/release.sh 1.2.0-rc1
 

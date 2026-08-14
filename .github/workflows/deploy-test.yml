@@ -38,10 +38,10 @@ jobs:
           push: true
           # Une image par environnement : ces valeurs sont dans le bundle.
           build-args: |
-            API_URL=${{ vars.TEST_API_URL || 'https://api-test.travelas.app' }}
-            NEXT_PUBLIC_APP_URL=${{ vars.TEST_APP_URL || 'https://entreprise-test.travelas.app' }}
+            API_URL=${{ vars.TEST_API_URL || 'https://api.ysem.education' }}
+            NEXT_PUBLIC_APP_URL=${{ vars.TEST_APP_URL || 'https://company-admin.ysem.education' }}
             NEXT_PUBLIC_APP_NAME=${{ vars.TEST_APP_NAME || 'Travelas Entreprise' }}
-            NEXT_PUBLIC_SOCKET_URL=${{ vars.TEST_SOCKET_URL || 'https://api-test.travelas.app' }}
+            NEXT_PUBLIC_SOCKET_URL=${{ vars.TEST_SOCKET_URL || 'https://api.ysem.education' }}
           tags: |
             ${{ env.IMAGE }}:test-latest
             ${{ env.IMAGE }}:${{ github.ref_name }}
