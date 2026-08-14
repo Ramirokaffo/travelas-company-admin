@@ -463,13 +463,21 @@ super-admin, ce dashboard, MySQL, Redis, Caddy) tient dans un seul compose,
 `deploy/docker-compose.yml` du dépôt `travelas-backend`.
 
 Le seul point qui touche au **code** de ce dépôt : Next inline au build tout
-`NEXT_PUBLIC_*` **et** le `process.env.API_URL` lu par `src/proxy.ts` (le
-runtime du proxy n'a accès qu'aux valeurs figées au build — c'est de là que
-sort l'origine `img-src` de la CSP). Ces valeurs vivent donc dans l'image, pas
-dans l'environnement du conteneur : ajouter une variable publique, c'est
-ajouter un `ARG` au Dockerfile, un `--build-arg` à `scripts/release.sh` et une
-entrée aux `build-args` du workflow. Une variable serveur ordinaire (`API_URL`
-côté `lib/api/server-api.ts`, `API_TIMEOUT_MS`) reste, elle, du pur runtime.
+`NEXT_PUBLIC_*`. Ces valeurs vivent donc dans l'image, pas dans
+l'environnement du conteneur : ajouter une variable publique, c'est ajouter un
+`ARG` au Dockerfile, un `--build-arg` à `scripts/release.sh` et une entrée aux
+`build-args` du workflow. Une variable sans ce préfixe (`API_URL`,
+`API_TIMEOUT_MS`, `MEDIA_URL`) reste du pur runtime — **y compris dans
+`src/proxy.ts`**, dont le bundle conserve `process.env.API_URL` au lieu de
+l'inliner.
+
+C'est ce qui impose **`MEDIA_URL`**, l'origine publique des fichiers
+téléversés, dont le proxy alimente `img-src`. Elle ne peut pas être déduite
+d'`API_URL` : en production celle-ci vaut l'adresse interne `http://api:3001`,
+que le navigateur ne peut pas atteindre, et les logos étaient bloqués par la
+CSP — cadre vide, sans erreur réseau. Vide, on retombe sur `API_URL` : c'est le
+cas du développement local, où les deux coïncident. Le domaine doit par
+ailleurs figurer dans les `images.remotePatterns` de `next.config.ts`.
 
 `/api/health` est exclue du `matcher` de `src/proxy.ts` : c'est la sonde de
 Docker et du reverse proxy, et le contrôle *fail-closed* la renverrait sinon

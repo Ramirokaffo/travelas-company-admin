@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { buildContentSecurityPolicy, mediaOrigin, socketOrigins } from "./csp";
+import { buildContentSecurityPolicy, mediaOrigins, socketOrigins } from "./csp";
 
 /**
  * La CSP est une protection silencieuse : quand elle est trop large personne
@@ -15,19 +15,40 @@ function directive(csp: string, name: string): string {
   return found ?? "";
 }
 
-const build = (mediaOrigin?: string | null) =>
-  buildContentSecurityPolicy({ nonce: "abc123", isDev: false, mediaOrigin });
-
-describe("mediaOrigin", () => {
-  it("ne retient que l'origine de l'API", () => {
-    expect(mediaOrigin("http://localhost:3001")).toBe("http://localhost:3001");
-    // Le chemin de l'API n'a rien à faire dans un en-tête public.
-    expect(mediaOrigin("https://api.travelas.app/v1")).toBe("https://api.travelas.app");
+const build = (media?: string) =>
+  buildContentSecurityPolicy({
+    nonce: "abc123",
+    isDev: false,
+    mediaOrigins: mediaOrigins(media),
   });
 
-  it("retombe sur null plutôt que d'injecter une valeur douteuse", () => {
-    expect(mediaOrigin(undefined)).toBeNull();
-    expect(mediaOrigin("pas une url")).toBeNull();
+describe("mediaOrigins", () => {
+  it("ne retient que l'origine des URLs fournies", () => {
+    expect(mediaOrigins("http://localhost:3001")).toEqual(["http://localhost:3001"]);
+    // Le chemin de l'API n'a rien à faire dans un en-tête public.
+    expect(mediaOrigins("https://api.travelas.app/v1")).toEqual([
+      "https://api.travelas.app",
+    ]);
+  });
+
+  it("accepte plusieurs origines séparées par des virgules, sans doublon", () => {
+    expect(mediaOrigins("https://api.travelas.app, https://cdn.travelas.app/x")).toEqual([
+      "https://api.travelas.app",
+      "https://cdn.travelas.app",
+    ]);
+    expect(mediaOrigins("https://api.travelas.app,https://api.travelas.app/files")).toEqual(
+      ["https://api.travelas.app"],
+    );
+  });
+
+  it("ignore une valeur douteuse plutôt que de l'injecter", () => {
+    expect(mediaOrigins(undefined)).toEqual([]);
+    expect(mediaOrigins("")).toEqual([]);
+    expect(mediaOrigins("pas une url")).toEqual([]);
+    // Une entrée invalide ne doit pas emporter les valides avec elle.
+    expect(mediaOrigins("pas une url,https://api.travelas.app")).toEqual([
+      "https://api.travelas.app",
+    ]);
   });
 });
 
@@ -47,14 +68,14 @@ describe("buildContentSecurityPolicy", () => {
   });
 
   it("reste valide sans origine de médias", () => {
-    const csp = build(null);
+    const csp = build();
     expect(directive(csp, "img-src")).toBe(
       "img-src 'self' data: blob: https://storage.googleapis.com https://firebasestorage.googleapis.com",
     );
   });
 
   it("porte le nonce et n'autorise aucun script inline", () => {
-    const csp = build(null);
+    const csp = build();
     expect(directive(csp, "script-src")).toContain("'nonce-abc123'");
     expect(csp).not.toContain("'unsafe-inline'; script");
     expect(directive(csp, "script-src")).not.toContain("'unsafe-eval'");
@@ -88,7 +109,7 @@ describe("connect-src et temps réel", () => {
     buildContentSecurityPolicy({
       nonce: "abc123",
       isDev: false,
-      mediaOrigin: "http://localhost:3001",
+      mediaOrigins: ["http://localhost:3001"],
       socketOrigins: socketOrigins(url),
     });
 

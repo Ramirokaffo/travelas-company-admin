@@ -10,15 +10,17 @@
 #             sources, ni cache de build : Next n'y copie que les modules
 #             réellement atteints par le graphe de dépendances.
 #
-# ATTENTION aux variables : Next **inline au build** tout `NEXT_PUBLIC_*`, et
-# aussi `process.env.API_URL` lu depuis `src/proxy.ts` (le runtime du proxy n'a
-# accès qu'aux valeurs figées au build). Les `ARG` ci-dessous doivent donc
-# porter les URLs **publiques** de l'environnement visé — une image de test
-# n'est pas réutilisable en production.
+# ATTENTION aux variables : Next **inline au build** tout `NEXT_PUBLIC_*`. Les
+# `ARG` ci-dessous doivent donc porter les URLs **publiques** de l'environnement
+# visé — une image de test n'est pas réutilisable en production.
 #
-# L'`API_URL` du **runtime** (celle qu'utilise `lib/api/server-api.ts`) reste,
-# elle, une variable d'environnement classique : le compose y met l'adresse
-# interne `http://api:3001`, qui ne transite jamais par le navigateur.
+# Les variables sans ce préfixe restent du pur runtime, `src/proxy.ts` compris :
+# son bundle conserve bien `process.env.API_URL`. Le compose y met l'adresse
+# interne `http://api:3001`, qui ne transite jamais par le navigateur — d'où
+# `MEDIA_URL`, variable de runtime elle aussi, qui porte l'origine **publique**
+# des fichiers téléversés pour la directive `img-src` de la CSP. Sans elle, le
+# navigateur se voit servir une origine qu'il ne peut pas atteindre et bloque
+# les logos.
 # ---------------------------------------------------------------------------
 
 FROM node:20.15.0-alpine AS base

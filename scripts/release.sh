@@ -17,10 +17,13 @@
 #   NO_CACHE       Forcer un build sans cache (def: 0)
 #
 #   --- Valeurs figées DANS l'image (voir l'en-tête du Dockerfile) ---
-#   API_URL                 URL publique de l'API (CSP du proxy)
+#   API_URL                 URL de l'API utilisée pendant le build
 #   NEXT_PUBLIC_APP_URL     URL publique de ce dashboard (contrôle d'origine)
 #   NEXT_PUBLIC_APP_NAME    Nom affiché dans l'interface
 #   NEXT_PUBLIC_SOCKET_URL  Point d'entrée socket.io (vide = temps réel coupé)
+#
+#   `MEDIA_URL` (origine publique des fichiers, CSP `img-src`) n'est PAS de
+#   celles-là : elle se lit au runtime, dans l'environnement du conteneur.
 #
 # Exemples :
 #   scripts/release.sh 1.0.0

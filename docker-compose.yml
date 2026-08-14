@@ -28,6 +28,10 @@ services:
       # Sur le compose global, c'est l'adresse interne `http://api:3001`.
       API_URL: ${API_URL:?API_URL est obligatoire}
       API_TIMEOUT_MS: ${API_TIMEOUT_MS:-15000}
+      # Origine PUBLIQUE des fichiers téléversés, pour `img-src` (CSP). À
+      # renseigner dès que `API_URL` ci-dessus est une adresse interne, que le
+      # navigateur ne peut pas atteindre. Vide : on retombe sur `API_URL`.
+      MEDIA_URL: ${MEDIA_URL:-}
       # Derrière un reverse proxy HTTPS, les cookies doivent porter `Secure`
       # même si Next voit une requête HTTP en interne.
       FORCE_SECURE_COOKIES: ${FORCE_SECURE_COOKIES:-1}

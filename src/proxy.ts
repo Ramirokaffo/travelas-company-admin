@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 import { ROUTES, isPublicRoute } from "@/constants/routes";
-import { buildContentSecurityPolicy, mediaOrigin, socketOrigins } from "@/lib/security/csp";
+import { buildContentSecurityPolicy, mediaOrigins, socketOrigins } from "@/lib/security/csp";
 
 /**
  * Proxy (ex-`middleware`, renommé dans Next 16) — première ligne de défense.
@@ -21,14 +21,25 @@ import { buildContentSecurityPolicy, mediaOrigin, socketOrigins } from "@/lib/se
 const ACCESS_TOKEN_COOKIE = "travelas_at";
 
 /**
- * Origine des fichiers servis par le backend, pour `img-src`.
+ * Origines publiques des fichiers servis par le backend, pour `img-src`.
+ *
+ * `MEDIA_URL` et non `API_URL` : ce module est lu **au runtime** (le bundle du
+ * proxy conserve `process.env.API_URL`, il ne l'inline pas), et en production
+ * `API_URL` vaut l'adresse interne `http://api:3001` — celle par laquelle le
+ * serveur Next joint l'API sur le réseau Docker. La CSP en héritait, et le
+ * navigateur bloquait alors les logos, pourtant servis sur le domaine public
+ * (`https://api.ysem.education/files/images/…`).
+ *
+ * Les deux adresses ne peuvent pas être la même variable : l'une décrit un
+ * chemin réseau privé, l'autre une origine que le navigateur doit atteindre.
+ * Sans `MEDIA_URL`, on retombe sur `API_URL` — le cas du développement local,
+ * où les deux coïncident.
  *
  * Lue ici et non via `lib/config/env` : ce module s'exécute sur le runtime du
- * proxy, où seules les variables inlinées au build sont disponibles. Seule
- * l'**origine** en est extraite — le chemin de l'API ne fuite pas dans un
- * en-tête public.
+ * proxy, hors du client HTTP serveur. Seule l'**origine** en est extraite — le
+ * chemin de l'API ne fuite pas dans un en-tête public.
  */
-const MEDIA_ORIGIN = mediaOrigin(process.env.API_URL);
+const MEDIA_ORIGINS = mediaOrigins(process.env.MEDIA_URL || process.env.API_URL);
 
 /**
  * Origines du point d'entrée temps réel, pour `connect-src`.
@@ -53,7 +64,7 @@ export default function proxy(request: NextRequest) {
   const csp = buildContentSecurityPolicy({
     nonce,
     isDev,
-    mediaOrigin: MEDIA_ORIGIN,
+    mediaOrigins: MEDIA_ORIGINS,
     socketOrigins: SOCKET_ORIGINS,
   });
 

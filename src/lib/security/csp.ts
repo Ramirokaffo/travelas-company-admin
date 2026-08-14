@@ -9,24 +9,45 @@
  * layout racine (qui le lit pour le transmettre à Next).
  */
 /**
- * Origine des fichiers téléversés (logos, bannières, photos de profil).
+ * Origines des fichiers téléversés (logos, bannières, photos de profil).
  *
  * Le backend NestJS sert lui-même ce qu'il stocke, sous `/files/images/…` :
- * l'URL renvoyée pour un logo d'entreprise pointe donc sur `API_URL`, pas sur
- * le bucket Google. Sans cette origine dans `img-src`, le navigateur bloque
- * l'image — le dashboard affiche alors un cadre vide, sans erreur réseau.
+ * l'URL renvoyée pour un logo d'entreprise pointe donc sur le domaine de
+ * l'API, pas sur le bucket Google. Sans cette origine dans `img-src`, le
+ * navigateur bloque l'image — le dashboard affiche alors un cadre vide, sans
+ * erreur réseau.
+ *
+ * C'est bien l'origine **publique** qu'il faut ici, celle que le navigateur
+ * voit dans l'URL renvoyée par le backend — pas l'adresse interne par laquelle
+ * le serveur Next joint l'API (`http://api:3001` en production). D'où une
+ * variable dédiée, `MEDIA_URL`, et non `API_URL` (cf. `src/proxy.ts`).
+ *
+ * Plusieurs origines sont acceptées, séparées par des virgules : le jour où un
+ * CDN ou un bucket s'ajoute, il n'y a pas de code à changer.
  *
  * Seul `img-src` s'ouvre : `connect-src` reste sur `'self'`. Afficher une image
  * publique servie par le backend n'est pas parler à l'API, le pattern BFF
  * (règle 1 de CLAUDE.md) reste entier.
  */
-export function mediaOrigin(apiUrl: string | undefined): string | null {
-  if (!apiUrl) return null;
-  try {
-    return new URL(apiUrl).origin;
-  } catch {
-    return null;
-  }
+export function mediaOrigins(value: string | undefined): string[] {
+  if (!value) return [];
+
+  const origins = value
+    .split(",")
+    .map((entry) => entry.trim())
+    .filter(Boolean)
+    .map((entry) => {
+      try {
+        return new URL(entry).origin;
+      } catch {
+        // Une valeur douteuse est ignorée plutôt qu'injectée telle quelle dans
+        // un en-tête : une entrée mal formée invaliderait toute la directive.
+        return null;
+      }
+    })
+    .filter((origin): origin is string => origin !== null);
+
+  return [...new Set(origins)];
 }
 
 /**
@@ -55,13 +76,13 @@ export function socketOrigins(socketUrl: string | undefined): string[] {
 export function buildContentSecurityPolicy({
   nonce,
   isDev,
-  mediaOrigin: media,
+  mediaOrigins: media = [],
   socketOrigins: sockets = [],
 }: {
   nonce: string;
   isDev: boolean;
-  /** Origine du backend, d'où proviennent les fichiers téléversés. */
-  mediaOrigin?: string | null;
+  /** Origines publiques des fichiers téléversés (`mediaOrigins()`). */
+  mediaOrigins?: readonly string[];
   /** Origines du point d'entrée temps réel (`socketOrigins()`). */
   socketOrigins?: readonly string[];
 }): string {
@@ -85,7 +106,7 @@ export function buildContentSecurityPolicy({
       "'self'",
       "data:",
       "blob:",
-      ...(media ? [media] : []),
+      ...media,
       "https://storage.googleapis.com",
       "https://firebasestorage.googleapis.com",
     ],

@@ -8,30 +8,35 @@ est le guide d'exploitation.
 
 ## Le piège à connaître avant tout
 
-Next **inline au build** :
+Next **inline au build** tout `NEXT_PUBLIC_*`. Ces valeurs vivent donc **dans
+l'image**, pas dans l'environnement du conteneur : une image de test n'est pas
+réutilisable en production, et changer un domaine impose de republier un tag.
 
-- tout `NEXT_PUBLIC_*` ;
-- `process.env.API_URL` **lu depuis `src/proxy.ts`** — le runtime du proxy
-  n'a accès qu'aux valeurs figées au build. C'est de là que sort l'origine
-  `img-src` de la CSP.
-
-Ces valeurs sont donc **dans l'image**, pas dans l'environnement du conteneur.
-Une image de test n'est pas réutilisable en production, et changer un domaine
-impose de republier un tag.
+Les variables **sans** ce préfixe restent, elles, du pur runtime — y compris
+dans `src/proxy.ts`, dont le bundle conserve bien `process.env.API_URL`. C'est
+exactement ce qui a fait disparaître les logos en production : le proxy y
+lisait l'`API_URL` du conteneur — l'adresse **interne** `http://api:3001` — et
+la posait dans `img-src`, alors que le navigateur charge les fichiers sur
+`https://api.ysem.education/…`. D'où **`MEDIA_URL`**, variable distincte.
 
 | Variable | Moment | Valeur attendue |
 |---|---|---|
-| `API_URL` (build) | `--build-arg` | URL **publique** de l'API — CSP `img-src` |
 | `NEXT_PUBLIC_APP_URL` | `--build-arg` | URL publique de ce dashboard — contrôle d'origine CSRF |
 | `NEXT_PUBLIC_SOCKET_URL` | `--build-arg` | URL publique de l'API (websocket) — vide = temps réel coupé |
 | `NEXT_PUBLIC_APP_NAME` | `--build-arg` | nom affiché |
-| `API_URL` (runtime) | environnement | adresse **interne** de l'API, `http://api:3001` |
+| `API_URL` | environnement | adresse **interne** de l'API, `http://api:3001` |
+| `MEDIA_URL` | environnement | origine **publique** des fichiers, `https://api.ysem.education` — CSP `img-src` |
 | `API_TIMEOUT_MS` | environnement | `15000` |
 | `FORCE_SECURE_COOKIES` | environnement | `1` — redondant avec `NODE_ENV=production`, gardé explicite |
 
-Les deux `API_URL` diffèrent volontairement : le navigateur charge les images
-sur le domaine public, le serveur Next appelle l'API par le réseau Docker
-(pattern BFF, règle 1 de [CLAUDE.md](CLAUDE.md)).
+`API_URL` et `MEDIA_URL` diffèrent volontairement : le serveur Next appelle
+l'API par le réseau Docker (pattern BFF, règle 1 de [CLAUDE.md](CLAUDE.md)),
+tandis que le navigateur charge les images sur le domaine public. En local, où
+les deux coïncident, `MEDIA_URL` peut rester vide : on retombe sur `API_URL`.
+
+Le domaine de `MEDIA_URL` doit par ailleurs figurer dans les
+`images.remotePatterns` de `next.config.ts` — cette liste-là, statique, est
+lue au build.
 
 ## Publier une version
 
@@ -66,9 +71,13 @@ docker build \
 
 docker run --rm -p 3000:3000 \
   -e API_URL=http://host.docker.internal:3001 \
+  -e MEDIA_URL=http://localhost:3001 \
   -e FORCE_SECURE_COOKIES=0 \
   travelas-company-admin:local
 ```
+
+`MEDIA_URL` est ici indispensable : `host.docker.internal` est l'adresse de
+l'API vue **du conteneur**, pas du navigateur.
 
 `docker-compose.yml` (à la racine) fait tourner ce dashboard **seul** contre
 une API déjà déployée ; `cp .env.docker .env` puis `docker compose up -d`.
